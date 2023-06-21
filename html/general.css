@@ -1,0 +1,50 @@
+.header{
+    font-size: x-large;
+  }
+
+  body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10cm;
+    max-width: 388px;
+    max-height: 800px;
+  }
+
+  .header{
+    position:absolute;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  body div{
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    max-height: 94px;
+    max-width: 354px;
+    padding: 10px;
+    background: cornflowerblue;
+  }
+
+  footer{
+    background: #A50113;
+    height: 94px;
+    width: 354px;
+    overflow: hidden;
+    bottom: 10%;
+    position: fixed;
+  }
+
+  footer .nav-bar-b .nvb-items{
+    list-style: none;
+    display: flex;
+    position: relative;
+    align-content: left;
+    column-gap: 10px;
+    color: white;
+    text-align: center;
+  }
