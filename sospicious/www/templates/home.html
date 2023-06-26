@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f99a56d007.js" crossorigin="anonymous"></script>
+    <title>SOSpicious</title>
+</head>
+<body onload="myFunction()">
+    <!-- <div class="home_container">
+        <div class="home_user-loc">
+            <div class="icon"><i class="fas fa-location-dot" id="userLocation"></i></div>
+            <label class="home_location" for="userLocation">Your Current Location</label>
+        </div>
+        <div class="home_btn-container">
+            <button class="home_sos-btn">SOS</button>
+        </div>
+        <p class="home_press-label">Press the <span>button</span> to send alert to your emergency contacts</>
+    </div> -->
+    <div class="cancel_container">
+        <h1>SENDING <br>EMERGENCY <span>ALERT!</span></h1>
+        <div id="cancel_timer"></div>
+        <div class="cancel_pin">
+            <form class="cancel_pincode-form">
+                <input class="cancel_pincode" type="password" maxlength=1 autofocus/>
+                <input class="cancel_pincode" type="password" maxlength=1 />
+                <input class="cancel_pincode" type="password" maxlength=1 />
+                <input class="cancel_pincode" type="password" maxlength=1 />
+            </form>
+        </div>
+        <p class="cancel_label">Enter your <span>4-digit pin</span> to cancel sending SOS Alert to your emergency contacts.</p>
+        <p class="cancel_sent">Emergency Alert was sent!</p>
+        <p class="cancel_wrong-pin">Wrong Password</p>
+    </div>
+    
+    <script src="../js/timer.js"></script>
+    <script src="cordova.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
