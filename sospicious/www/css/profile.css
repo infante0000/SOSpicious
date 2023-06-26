@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#F2F3F5;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background: #F2F3F5;    
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-350px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    color: #000;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+#profile_firstname{
+    color: rgba(252,0,28,0.8);
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.profile-pic-div{
+    border-radius: 100px;
+    border: 2px solid #FFBF00;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#profile_pic{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#profile_picfile{
+    display: none;
+}
+
+#profile_uploadPic{
+    font-family: Poppins;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgba(194,194,194,1);
+    font-size: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.profile-name-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space:pre
+}
+
+.profile_navs{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    left: -25%;
+    margin-top: 40px;
+    width: 350px;
+}
+
+.profile_navs_item{
+    display: flex;
+    width: 350px;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.profile_navs_item:hover{
+    background-color: #e5e6e8;
+    border-radius: 10px;
+}
+
+.profile_navs_title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 230px;
+}
+
+.bg-blurred{
+    filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.logout_popup{
+    width: 300px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-logoutModal {
+    visibility: visible;
+    top: 100%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.logout_popup > img {
+    width:80px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.30);
+}
+
+.logout_popup > p {
+    font-family: Poppins;
+    font-size: 15px;
+}
+
+.logout_popup > button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.30);
+}
+
+.cancelLogout {
+    background: #fff;
+    color: #BA2515;
+    border-color: #BA2515; 
+}
+
+.confirmLogout {
+    background: #BA2515;
+    color: #F2F3F5;
+    border: 0;
+}
+
+
+.profile_navs_title h3 {
+    color: #000;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    bottom: -100px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.profile_navs_title span {
+    color: rgba(0, 0, 0, 0.30);;
+    font-size: 15px;
+    font-family: Poppins;
+    text-align: left;
+    width: 250px;
+}
