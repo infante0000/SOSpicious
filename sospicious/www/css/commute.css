@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.commute_container{
+    background-color: #E0E8F6;
+}
+
+.commute_container{
+    display: grid;
+    place-items: center;
+    row-gap: 1rem;
+    grid-template-rows: 1fr 20px 70px 1fr;
+    height: 100vh;
+    padding: 0 1rem;
+}
+
+.commute_loc{
+    margin-top: 200px;
+}
+
+.commute_track{
+    
+}
+
+.commute_label{
+    text-align: center;
+    font-size: 16px;
+}
+
+.commute_button1{
+   text-transform: uppercase;
+   border-radius: 9.123px;
+   background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+   padding: 20px;
+   color: white;
+   width: 42;
+   height: 177;
+   font-weight: 700;
+}
+
+
+.commute2_share_my_ride{
+    color: #FFF;
+    text-shadow: 0px 1.5px 2px 0px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    font-weight: 600;
+    width: 161px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 20px 20px 0px 0px;
+    background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+    text-transform: uppercase;
+}
+
+.commute2_history{
+    color: #1A1717;
+    text-shadow: 0px 1.5px 2px 0px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    font-weight: 600;
+    width: 167px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 0px 20px 0px 0px;
+    background: #D9D9D9;
+    text-transform: uppercase;
+
+}
+
+.commute2_send{
+    color: rgba(252, 0, 28, 0.80);
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.commute2_loc{
+    display: block;
+    padding: 12px 72px 11px 20px;
+    align-items: center;
+    border-radius: 8px;
+    background: #A50113;
+}
+
+.commute2_input{
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 1px solid black;
+        
+}
+
