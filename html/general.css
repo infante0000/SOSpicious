@@ -1,35 +1,54 @@
-.header{
-    font-size: x-large;
+
+   .main_container{
+    display: block;
+    align-items: center;
   }
 
-  body{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 10cm;
-    max-width: 388px;
-    max-height: 800px;
-  }
-
-  .header{
-    position:absolute;
+  /*Header styles*/
+  .general_header{
+    position:fixed;
     top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: stretch;
   }
 
-  body div{
+  .g_SOS_logo{
+    display: block;
+    align-self: center;
+    height: 51px;
+    width: 96px;
+  }
+
+  .general_header_loc{
+    margin-top: 19px;
+    margin: 20px;
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    height:fit-content;
-    max-height: 94px;
-    max-width: 354px;
-    padding: 10px;
-    background: cornflowerblue;
+    flex-direction: row;
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15%;
+  }
+  .general_header_loc > *{
+    flex: 0 0 auto;
   }
 
+  .general_header_loc_img{
+    width: 40px;
+    margin: 10px;
+  }
+
+  .general_header_loc_label{
+    align-self: center;
+    margin: 10px;
+  }
+
+
+  /*Footer styles*/ 
+  
   footer{
     background: #A50113;
     height: 94px;
@@ -39,12 +58,49 @@
     position: fixed;
   }
 
-  footer .nav-bar-b .nvb-items{
+  .items{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  .item_img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .nvb_items{
     list-style: none;
     display: flex;
-    position: relative;
-    align-content: left;
-    column-gap: 10px;
-    color: white;
-    text-align: center;
+    flex-direction: row;
+  }
+
+  .nvb_items > *{
+    flex: 0 0 auto;
+  }
+
+  /*General styles, for whole document*/
+  
+  body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10cm;
+    max-width: 388px;
+    max-height: 800px;
+  }
+
+  body div{
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    max-height: 94px;
+    max-width: 354px;
+    padding: 10px;
+    
+  }
+  .grey_bg{
+    background-color: grey;
   }
