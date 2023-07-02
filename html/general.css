@@ -1,10 +1,12 @@
 
    .main_container{
+    margin-top: -100px;
     display: block;
     align-items: center;
     background-color: white;
     max-height: 800px;
     max-width: 388px;
+    overflow-y: scroll;
   }
 
   /*Header styles*/
@@ -14,7 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
   }
 
   .g_SOS_logo{
@@ -22,6 +24,8 @@
     align-self: center;
     height: 51px;
     width: 96px;
+    padding-left: 30px;
+
   }
 
   .general_header_loc{
@@ -54,15 +58,13 @@
 
 
   /*Bottom Navbar styles*/ 
-  
-  footer{
+  .nav_bar{
     background: white;
     height: 94px;
-    width: 354px;
+    width: 388px;
     overflow: hidden;
     bottom: 0;
     position: fixed;
-    
   }
 
   .items{
@@ -85,6 +87,7 @@
   .item_img {
     height: 30px;
     width: 30px;
+    
   }
 
   .nvb_items{
@@ -92,6 +95,7 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .nvb_items > *{
@@ -139,6 +143,82 @@
     text-decoration: none;
   }
 
+  .content_container{
+    width: auto;
+    height: auto;
+    
+  }
+
+  body ::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*For Contacts Page styles*/
+.em_name_sb{
+  border: 5px;
+  border-style: solid;
+  border-color: black;
+}
+
+.em_name_container{
+  margin-top: 19px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 60px;
+  align-content: center;
+}
+
+.content_header{
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  align-items: center;
+  align-content: space-between;
+}
+
+.contact_container{
+  border:black;
+  border-style: solid;
+  border-width: 3px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: stretch;
+  justify-content: space-between;
+}
+
+.em_nr_cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.em_nr_cont span{
+  text-align: center;
+}
+
+.contact_img{
+  border-radius: 50%;
+  border-style: solid;
+  border-color: gold;
+  max-height: 65px;
+  max-width: 65px;
+}
+
+.contact_container button{
+  height: 35px;
+  width: 35px;
+  background-color: red;
+  color: white;
+  border-radius: 10%;
+} 
+
+
+/*Removed styles*/
+/*
   .SOS_btn {
     height: 263px;
     width: 263px;
@@ -158,9 +238,4 @@
     font-size: 100px;
     color: white;
   }
-
-  .content_container{
-    width: auto;
-    height: auto;
-    
-  }
+*/
