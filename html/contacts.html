@@ -9,6 +9,8 @@
     
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="script.js"></script>
 </head>
 
 <body >
@@ -32,7 +34,7 @@
         <div class="content_header">
             <span><b>Emergency Contact(s)</b></span>
             <a href="#">
-                <span style="color: red; padding-left: 50px;"><b>Add More+</b></span>
+                <span style="color: red; padding-left: 30px;" id="addcontact" onclick="enterwin(this.id+'1')"><b>Add More+</b></span>
             </a>
         </div>
 
@@ -49,142 +51,149 @@
             </div>
 
             <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image2">
+                <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
             </span>
 
-            <div class="em_nr_cont">
-                <span id="contact_name2"><b>Placeholder Name</b></span>
-                <span id="contact_relation2"> Placeholder Relationship</span>
+            <!--Editing Contacts-->
+            <div id="editcontact1" class="edit_contact">
+                 <a class="close" onclick="outwin(editcontact1.id)">&times;</a>
+                  <div class="edit_contact_maincontainer">
+                        <!--The first one with image-->
+                        <div class="ec_container_header">
+                            <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
+                            <div class="ec_content_nr" style="align-content: flex-start;">
+                                <span><b>Name</b></span>
+                                <span style="color: red;">Relationship</span>
+                            </div>
+                        </div>
+                        <!--First and Last name-->
+                        <div class="ec_content_container">
+                            <div class="two_layers">
+                                <span>Name</span>
+                                <form> 
+                                    <input type="text" placeholder="First name" style="width: 70%;">
+                                </form>
+                            </div>
+                            <div class="two_layers">
+                                <span>Last Name</span>
+                                <form>
+                                    <input type="text" placeholder="Last name" style="width: 70%;">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ec_content_container">
+                            <div class="two_layers">
+                                <span>Mobile No.</span>
+                                <form>
+                                    <input type="number" placeholder="09123456789">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ec_content_container">
+                            <div class="two_layers">
+                                <span>Email</span>
+                                <form>
+                                    <input type="email" placeholder="example@email.com">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ec_content_container">
+                            <div class="two_layers">
+                                <span>Birthday</span>
+                                <form>
+                                    <input type="date">
+                                </form>
+                            </div>
+
+                            <div class="two_layers">
+                                <span>Relationship</span>
+                                <form>
+                                    <input type="text" placeholder="Friend">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ec_content_button">
+                            <button type="button" style="background-color: red; color: white;">CONFIRM</button>
+                            <button type="button" style="color: red; background-color: white; border: solid red 3px;">CANCEL</button>
+                            
+                        </div>
+
+                        <div class="spacing">spacing</div>
+
+                    </div>
             </div>
 
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
+            <!--Adding contacts-->
+            <div id="addcontact1" class="add_contact">
+                <a class="close" onclick="outwin(addcontact1.id)">&times;</a>
 
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image3">
-            </span>
+                <div class="edit_contact_maincontainer">
+                    <!--The first one with image-->
+                    <div style="align-items: center;">
+                        <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
+                    </div>
+                    <!--First and Last name-->
+                    <div class="ec_content_container">
+                        <div class="two_layers">
+                            <span>Name</span>
+                            <form> 
+                                <input type="text" placeholder="First name" style="width: 70%;">
+                            </form>
+                        </div>
+                        <div class="two_layers">
+                            <span>Last Name</span>
+                            <form>
+                                <input type="text" placeholder="Last name" style="width: 70%;">
+                            </form>
+                        </div>
+                    </div>
 
-            <div class="em_nr_cont">
-                <span id="contact_name3"><b>Placeholder Name</b></span>
-                <span id="contact_relation3"> Placeholder Relationship</span>
+                    <div class="ec_content_container">
+                        <div class="two_layers">
+                            <span>Mobile No.</span>
+                            <form>
+                                <input type="number" placeholder="09123456789">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="ec_content_container">
+                        <div class="two_layers">
+                            <span>Email</span>
+                            <form>
+                                <input type="email" placeholder="example@email.com">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="ec_content_container">
+                        <div class="two_layers">
+                            <span>Birthday</span>
+                            <form>
+                                <input type="date">
+                            </form>
+                        </div>
+
+                        <div class="two_layers">
+                            <span>Relationship</span>
+                            <form>
+                                <input type="text" placeholder="Friend">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="add_content_button">
+                        <button type="button" style="background-color: red; color: white;">ADD NEW</button>
+                        <button type="button" style="color: red; background-color: white; border: solid red 3px;">CANCEL</button>
+                        
+                    </div>
+
+                    <div class="spacing">spacing</div>
             </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image4">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name4"><b>Placeholder Name</b></span>
-                <span id="contact_relation4"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image5">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name5"><b>Placeholder Name</b></span>
-                <span id="contact_relation5"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image6">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name6"><b>Placeholder Name</b></span>
-                <span id="contact_relation6"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image7">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name7"><b>Placeholder Name</b></span>
-                <span id="contact_relation7"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image8">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name8"><b>Placeholder Name</b></span>
-                <span id="contact_relation8"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image9">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name9"><b>Placeholder Name</b></span>
-                <span id="contact_relation9"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
-        </div>
-
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image10">
-            </span>
-
-            <div class="em_nr_cont">
-                <span id="contact_name10"><b>Placeholder Name</b></span>
-                <span id="contact_relation10"> Placeholder Relationship</span>
-            </div>
-
-            <span> 
-                <button type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
         </div>
     </div>
 
@@ -197,7 +206,7 @@
         <nav class="nav_bar">
             <ul class ="nvb_items">
                 <li>
-                    <a href="#">
+                    <a href="general.html">
                         <div class="items">
                             <img src="https://www.freeiconspng.com/uploads/home-page-icon-0.png" class="item_img">
                             <p class="tagline ">Home</p>
@@ -232,3 +241,4 @@
         </nav>
     </footer>
 </body>
+
