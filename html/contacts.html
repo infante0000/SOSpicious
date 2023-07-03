@@ -9,7 +9,8 @@
     
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="script.js"></script>
 </head>
 
@@ -17,24 +18,24 @@
 
     <div class="general_header">
         <div>
-            <img src="\sospicious\www\img\sos-logo1.png" alt="SOS logo" class="g_SOS_logo" >
+            <img src="\sospicious\res\screen\android\sos-logo 2.png" alt="SOS logo" class="g_SOS_logo" >
 
         </div>
 
         <div class="em_name_container">
+            <img src="\sospicious\res\screen\android\Search_alt_light.png">
             <form>
                 <input type="text" id="em_name" placeholder="Search..." class="em_name_sb">
             </form>
         </div>
-
-        
     </div>
+
     <div class="main_container">
         
         <div class="content_header">
             <span><b>Emergency Contact(s)</b></span>
             <a href="#">
-                <span style="color: red; padding-left: 30px;" id="addcontact" onclick="enterwin(this.id+'1')"><b>Add More+</b></span>
+                <span style="color: red;" id="addcontact" onclick="enterwin(this.id+'1')"><b>Add More+</b></span>
             </a>
         </div>
 
@@ -46,13 +47,15 @@
             </span>
 
             <div class="em_nr_cont">
-                <span id="contact_name1"><b>Placeholder Name</b></span>
-                <span id="contact_relation1"> Placeholder Relationship</span>
+                <span id="contact_name1"  style="text-align: left;" class="em_nr_name"><b>Placeholder Name</b></span>
+                <span id="contact_relation1" style="text-align: left;"  class="em_nr_rel"> Relationship</span>
             </div>
 
-            <span> 
-                <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn"> <i class="fa fa-pencil-square-o"></i> </button>
-            </span>
+             
+            <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn">
+                <img src="\sospicious\res\screen\android\Edit.png">
+            </button>
+            
 
             <!--Editing Contacts-->
             <div id="editcontact1" class="edit_contact">
@@ -61,7 +64,7 @@
                         <!--The first one with image-->
                         <div class="ec_container_header">
                             <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
-                            <div class="ec_content_nr" style="align-content: flex-start;">
+                            <div class="ec_content_nr">
                                 <span><b>Name</b></span>
                                 <span style="color: red;">Relationship</span>
                             </div>
@@ -118,7 +121,7 @@
 
                         <div class="ec_content_button">
                             <button type="button" style="background-color: red; color: white;">CONFIRM</button>
-                            <button type="button" style="color: red; background-color: white; border: solid red 3px;">CANCEL</button>
+                            <button type="button" style="color: red; background-color: white; border: solid red 1px;" onclick="outwin(editcontact1.id)">CANCEL</button>
                             
                         </div>
 
@@ -204,35 +207,35 @@
 <!--Bottom Navbar, kind of messy-->
     <footer>
         <nav class="nav_bar">
-            <ul class ="nvb_items">
+            <ul class ="nvb_items" style="left: 0; position: relative;">
                 <li>
                     <a href="general.html">
                         <div class="items">
-                            <img src="https://www.freeiconspng.com/uploads/home-page-icon-0.png" class="item_img">
-                            <p class="tagline ">Home</p>
+                            <img src="\sospicious\res\screen\android\HomeIcon.png" class="item_img">
+                            <p class="tagline">Home</p>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="items">
-                            <img src="https://www.freeiconspng.com/uploads/compass-icon-13.png" class="item_img">
+                            <img src="\sospicious\res\screen\android\CommuteIcon.png" class="item_img">
                             <p class="tagline">Commute</p>
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="contacts.html">
                         <div class="items ACTIVE">
-                            <img src="https://www.freeiconspng.com/uploads/the-phone-icon-has-now-grown-to-a-similar-status-how-many-phones-have--1.png" class="item_img">
-                            <p class="tagline">Contacts</p>
+                            <img src="\sospicious\res\screen\android\ACTIVEContacts.png" class="item_img">
+                            <p class="tagline_active">Contacts</p>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div class="items">
-                            <img src="https://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-16.png" class="item_img">
+                            <img src="\sospicious\res\screen\android\ProfileIcon.png    " class="item_img">
                             <p class="tagline">Profile</p>
                         </div>
                     </a>
