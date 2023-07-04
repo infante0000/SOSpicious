@@ -15,11 +15,12 @@
 </head>
 
 <body >
-
+    <!--NOTE: This (and general.html) uses its own css file named "general.css";
+        It has global changes to certain tags, like body, div, and button.
+        Please be advised when adding new stuff-->
     <div class="general_header">
         <div>
             <img src="\sospicious\res\screen\android\sos-logo 2.png" alt="SOS logo" class="g_SOS_logo" >
-
         </div>
 
         <div class="em_name_container">
@@ -59,23 +60,27 @@
             <!--
                 ID NAMES
                     Full Name: fullname
-                    First Name: fname
-                    Last Name: lname
-                    Mobile No: mobno
-                    Email: email_add
-                    Birthday: bday
-                    Relationship: relation
+                    First Name: e_fname
+                    Last Name: e_lname
+                    Mobile No: e_mobno
+                    Email: e_email_add
+                    Birthday: e_bday
+                    Relationship: e_relation
             -->
 
             <!--Editing Contacts-->
+            <!--Editing and Adding Contacts have almost the same containers, save for their buttons. If there needs
+                CSS changes, just look at the ones used here on the general.css page
+            
+                Another thing, the modals are fixed; As long as they fit in the screen it won't support scrolling-->
             <div id="editcontact1" class="edit_contact">
                  <a class="close" onclick="outwin(editcontact1.id)">&times;</a>
                   <div class="edit_contact_maincontainer">
                         <!--The first one with image-->
                         <div class="ec_container_header">
-                            <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
+                            <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="e_contact_image1">
                             <div class="ec_content_nr">
-                                <span id="fullname"><b>Name</b></span>
+                                <span id="e_fullname"><b>Name</b></span>
                                 <span style="color: red;" id="relation">Relationship</span>
                             </div>
                         </div>
@@ -84,13 +89,13 @@
                             <div class="two_layers">
                                 <span>Name</span>
                                 <form> 
-                                    <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="fname">
+                                    <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="e_fname">
                                 </form>
                             </div>
                             <div class="two_layers">
                                 <span>Last Name</span>
                                 <form>
-                                    <input type="text" placeholder="Last name" style="width: 70%;" maxlength="20" id="lname">
+                                    <input type="text" placeholder="Last name" style="width: 70%;" maxlength="20" id="e_lname">
                                 </form>
                             </div>
                         </div>
@@ -99,7 +104,7 @@
                             <div class="two_layers">
                                 <span>Mobile No.</span>
                                 <form>
-                                    <input type="number" placeholder="09123456789" class="borderless" id="mobno" 
+                                    <input type="number" placeholder="09123456789" class="borderless" id="e_mobno" 
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     type = "number"
                                     maxlength = "11">
@@ -111,7 +116,7 @@
                             <div class="two_layers">
                                 <span>Email</span>
                                 <form>
-                                    <input type="email" placeholder="example@email.com" maxlength="40" id="email_add">
+                                    <input type="email" placeholder="example@email.com" maxlength="40" id="e_email_add">
                                 </form>
                             </div>
                         </div>
@@ -127,16 +132,20 @@
                             <div class="two_layers">
                                 <span>Relationship</span>
                                 <form>
-                                    <input type="text" placeholder="Friend" maxlength="20" id="relation">
+                                    <input type="text" placeholder="Friend" maxlength="20" id="e_relation">
                                 </form>
                             </div>
                         </div>
 
                         <div class="ec_content_button">
-                            <button type="button" class="confirm_btn">CONFIRM</button>
+                            <button type="button" class="confirm_btn" onclick="displayname()">CONFIRM</button>
                             <button type="button" class="cancel_btn" onclick="outwin(editcontact1.id)">CANCEL</button>
-                            
                         </div>
+
+                        <div class="ec_content_button">
+                            <span id="output1"> </span>
+                        </div>
+
 
                        
 
@@ -144,12 +153,12 @@
             </div>
             <!--
                 ID NAMES
-                    First Name: fname
-                    Last Name: lname
-                    Mobile No: mobno
-                    Email: email_add
-                    Birthday: bday
-                    Relationship: relation
+                    First Name: a_fname
+                    Last Name: a_lname
+                    Mobile No: a_mobno
+                    Email: a_email_add
+                    Birthday: a_bday
+                    Relationship: a_relation
             -->
 
             <!--Adding contacts-->
@@ -157,22 +166,22 @@
                 <a class="close" onclick="outwin(addcontact1.id)">&times;</a>
 
                 <div class="edit_contact_maincontainer">
-                    <!--The first one with image-->
+                    <!--The first partition with image-->
                     <div style="align-items: center;">
-                        <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
+                        <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="a_contact_image1">
                     </div>
                     <!--First and Last name-->
                     <div class="ec_content_container">
                         <div class="two_layers">
                             <span>Name</span>
                             <form> 
-                                <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="fname">
+                                <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="a_fname">
                             </form>
                         </div>
                         <div class="two_layers">
                             <span>Last Name</span>
                             <form>
-                                <input type="text" placeholder="Last name" style="width: 70%;"maxlength="20" id="lname"> 
+                                <input type="text" placeholder="Last name" style="width: 70%;"maxlength="20" id="a_lname"> 
                             </form>
                         </div>
                     </div>
@@ -182,7 +191,7 @@
                             <span>Mobile No.</span>
                             <form>
                                 <!--Numbers ignore maxlength, so I needed Stackoverflow-->
-                                <input type="number" placeholder="09123456789" class="borderless" maxlength="11" id="mobno"
+                                <input type="number" placeholder="09123456789" class="borderless" maxlength="11" id="a_mobno"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "number"
                                 maxlength = "11">
@@ -194,7 +203,7 @@
                         <div class="two_layers">
                             <span>Email</span>
                             <form>
-                                <input type="email" placeholder="example@email.com" maxlength="50" id="email_add">
+                                <input type="email" placeholder="example@email.com" maxlength="50" id="a_email_add">
                             </form>
                         </div>
                     </div>
@@ -203,14 +212,14 @@
                         <div class="two_layers">
                             <span>Birthday</span>
                             <form>
-                                <input type="date" id="bday">
+                                <input type="date" id="a_bday">
                             </form>
                         </div>
 
                         <div class="two_layers">
                             <span>Relationship</span>
                             <form>
-                                <input type="text" placeholder="Friend" maxlength="20" id="relation">
+                                <input type="text" placeholder="Friend" maxlength="20" id="a_relation">
                             </form>
                         </div>
                     </div>
@@ -230,12 +239,13 @@
 
 
 
-<!--Bottom Navbar, kind of messy-->
+<!--Bottom navbar; please avoid messing with the spacing unless the navbar itself is causing crashes-->
     <footer>
         <nav class="nav_bar">
             <ul class ="nvb_items" style="left: 0; position: relative;">
                 <li>
                     <a href="general.html">
+                        <!--This div creates a partition between the icon and text, allowing it to have an icon + tagline-->
                         <div class="items">
                             <img src="\sospicious\res\screen\android\HomeIcon.png" class="item_img">
                             <p class="tagline">Home</p>
@@ -252,6 +262,8 @@
                 </li>
                 <li>
                     <a href="contacts.html">
+                        <!--The ACTIVE class can be used on other footers so long as the page is currently in use-->
+                        <!--The tagline_active is for the text, while the ACTIVE is for the red top border-->
                         <div class="items ACTIVE">
                             <img src="\sospicious\res\screen\android\ACTIVEContacts.png" class="item_img">
                             <p class="tagline_active">Contacts</p>
