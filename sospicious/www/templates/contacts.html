@@ -86,6 +86,7 @@
                                 <span style="color: red;" id="relation">Relationship</span>
                             </div>
                         </div>
+
                         <!--First and Last name-->
                         <div class="ec_content_container">
                             <div class="two_layers">
@@ -94,12 +95,14 @@
                                     <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="e_fname">
                                 </form>
                             </div>
+
                             <div class="two_layers">
                                 <span>Last Name</span>
                                 <form>
                                     <input type="text" placeholder="Last name" style="width: 70%;" maxlength="20" id="e_lname">
                                 </form>
                             </div>
+
                         </div>
 
                         <div class="ec_content_container">
@@ -138,6 +141,7 @@
                                 </form>
                             </div>
                         </div>
+
                         <!--Buttons for confirm and cancel-->
                         <div class="ec_content_button">
                             <button type="button" class="confirm_btn" onclick="displayname()">CONFIRM</button>
@@ -189,7 +193,7 @@
                         <div class="two_layers">
                             <span>Mobile No.</span>
                             <form>
-                                <!--Numbers ignore maxlength, so I needed Stackoverflow-->
+                                <!--Numbers ignore maxlength, so I needed to put in JS which checks for number count-->
                                 <input type="number" placeholder="09123456789" class="borderless" maxlength="11" id="a_mobno"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "number"
