@@ -46,7 +46,7 @@
          <div class="signup-form" id="REGISTER">
             <h1>Get Started!</h1>
             <p>Saving lives, one <span>click</span> at a time.</p>
-            <form action="#">
+            <form action="../php/process-signup.php" method="post">
                   <div class="signup_input-group">
                      <div class="signup_input">
                         <label for="username">Username</label>
@@ -58,12 +58,16 @@
                      </div>
                      <div class="signup_input">
                         <label for="FirstName">First Name</label>
-                        <input type="text" name="FirstName" placeholder="FirstName" required>
+                        <input type="text" name="firstName" placeholder="FirstName" required>
                      </div>
                      <div class="signup_input">
                         <label for="LastName">Last Name</label>
-                        <input type="text" name="LastName" placeholder="LastName" required>
+                        <input type="text" name="lastName" placeholder="LastName" required>
                      </div>
+                  </div>
+                  <div class="signup_input">
+                     <label for="Birthdate">Email</label>
+                     <input type="date" name="birthdate" placeholder="example@gmail.com" required>
                   </div>
                   <div class="signup_input">
                         <label for="username">Mobile Number</label>
@@ -71,8 +75,9 @@
                   </div>
                   <div class="signup_input">
                      <label for="username">Email</label>
-                     <input type="text" name="Email" placeholder="example@gmail.com" required>
-               </div>
+                     <input type="text" name="email" placeholder="example@gmail.com" required>
+                  </div>
+
                   
                   <div class="signup_button">
                      <button type="submit" name="signup">Sign up</button>
