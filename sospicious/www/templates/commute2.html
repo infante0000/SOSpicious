@@ -16,8 +16,8 @@
 
         <div class="commute2_send">
             <label for="commute2_send_to">Send to:</label>
-            <img src="../img/Chips Input.png" alt="mom">
-            <img src="../img/Chips Input (1).png" alt="">
+            <img class="commute2_img" src="../img/Chips Input.png" alt="mom">
+            <img class="commute2_img" src="../img/Chips Input (1).png" alt="">
         </div>
 
         <div class="commute2_loc">
@@ -27,34 +27,40 @@
             <img class="coomute2_taxi" src="../img/ph_taxi-light.png" alt="taxi">
             <input class="commute2_input" type="text">
         </div>
-
-        <div class="commute2_vehicle_details">
-            <label for="commute2_vehicle">Type</label>
-            <select name="commute2_vehicle" class="commute2_vehicle">
-                <option value="Taxi">Taxi</option>
-                <option value="Bus">Bus</option>
-                <option value="Tricycle">Tricycle</option>
-                <option value="Motorcycle">Motorcycle</option>
-            </select>
-            <label for="commute2_plate_number">Plate Number</label>
-            <input type="text" value="ABC 1234">
-        </div>
+        <form action="#" class="form">
+            <div class="commute2_column">
+                <div class="commute2_col">
+                    <label class="commute2_label" for="commute2_vehicle">Type</label>
+                    <select name="commute2_vehicle" class="commute2_same">
+                        <option value="Country" hidden>Vehicle</option>
+                        <option value="Taxi">Taxi</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Tricycle">Tricycle</option>
+                        <option value="Motorcycle">Motorcycle</option>
+                    </select>
+                </div>
+                <div class="commute2_col">
+                    <label class="commute2_label"  for="commute2_plate_number">Plate Number</label>
+                    <input class="commute2_same" type="text" value="ABC 1234">
+                </div>
+            </div>
+        </form>
 
         <div class="commute2_driver">
-            <label for="commute2_driver_name">Driver's Name</label>
+            <label class="commute2_label"  for="commute2_driver_name">Driver's Name</label>
             <br>
-            <input type="text" value="Juan Dela Cruz">
+            <input class="commute2_same" type="text" placeholder="Juan Dela Cruz">
         </div>
 
         <div class="commute2_other_details">
-            <label for="commute2_details">Other Details</label>
+            <label class="commute2_label"  for="commute2_details">Other Details</label>
             <br>
-            <input type="text">
+            <input id="commute2_details" class="commute2_same" type="text">
         </div>
 
         <div class="commute2_two_buttons">
             <button class="commute2_share">Share</button>
-            <button class="commute2_history">Cancel</button>
+            <button class="commute2_cancel">Cancel</button>
         </div>
         
 
