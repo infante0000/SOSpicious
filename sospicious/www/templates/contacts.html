@@ -7,11 +7,11 @@
     <meta name = "description" content="Mobile application for tracking and seeking emeregncy responses">
     <meta name="keywords" content="SOS, Help, Tracking">
     
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="/sospicious\www\css\general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="script.js"></script>
+    <script src="/sospicious\www\js\general_contact.js"></script>
 </head>
 
 <body >
@@ -41,6 +41,9 @@
         </div>
 
         <!--Containers-->
+        <!--To make multiple contact containers, one would need to redo the codes from line 46 all the way to line 237
+            Since that includes the add and edit function as well. 
+            EDIT: Actually even if you skip the add part, I *think* walang mangyayaring masama-->
         
         <div class="contact_container">
             <span> 
@@ -71,7 +74,6 @@
             <!--Editing Contacts-->
             <!--Editing and Adding Contacts have almost the same containers, save for their buttons. If there needs
                 CSS changes, just look at the ones used here on the general.css page
-            
                 Another thing, the modals are fixed; As long as they fit in the screen it won't support scrolling-->
             <div id="editcontact1" class="edit_contact">
                  <a class="close" onclick="outwin(editcontact1.id)">&times;</a>
@@ -136,7 +138,7 @@
                                 </form>
                             </div>
                         </div>
-
+                        <!--Buttons for confirm and cancel-->
                         <div class="ec_content_button">
                             <button type="button" class="confirm_btn" onclick="displayname()">CONFIRM</button>
                             <button type="button" class="cancel_btn" onclick="outwin(editcontact1.id)">CANCEL</button>
@@ -145,10 +147,7 @@
                         <div class="ec_content_button">
                             <span id="output1"> </span>
                         </div>
-
-
-                       
-
+                        
                     </div>
             </div>
             <!--
@@ -253,7 +252,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="commute.html">
                         <div class="items">
                             <img src="\sospicious\res\screen\android\CommuteIcon.png" class="item_img">
                             <p class="tagline">Commute</p>
@@ -271,7 +270,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="profile.html">
                         <div class="items">
                             <img src="\sospicious\res\screen\android\ProfileIcon.png    " class="item_img">
                             <p class="tagline">Profile</p>

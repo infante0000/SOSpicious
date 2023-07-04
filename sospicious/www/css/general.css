@@ -29,32 +29,41 @@
   }
 
   .general_header_loc{
-    margin-top: 19px;
-    margin: 20px;
-    background-color: white;
     display: flex;
     flex-direction: row;
-    border-color: black;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 15%;
-  
+    align-items: baseline;
+    border-radius: 10px;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+    padding: 5px 10px;
+    align-items: center;
+    
   }
   .general_header_loc > *{
     flex: 0 0 auto;
   }
 
   .general_header_loc_img{
-  
-    width: 40px;
-    margin: 10px;
+    margin-left: 60%;
+    width: 15.825px;
+    height: 22px;
   }
 
   .general_header_loc_label{
     align-self: center;
-    padding-top: 15px;
-    margin: 10px;
     border: none;
+
+    overflow: hidden;
+    color: #000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25.55px;
+    letter-spacing: -0.307px;
   }
 
 
@@ -107,6 +116,34 @@
     border-top: 5px;
     border-style: solid;
     border-top-color: red;
+  }
+
+  footer{
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+  }
+  
+  .tagline{
+  color: #C2C2C2;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
+  }
+  
+  .tagline_active{
+    color: #A50113;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
   }
 
   /*General styles, for whole document*/
@@ -193,9 +230,9 @@ background: #FFF;
   font-family: Roboto;
 
   color: #000;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   
   width: max-content;
   height: max-content;
@@ -276,6 +313,7 @@ line-height: normal;
   }
 */
 
+/*Was used to check for modals*/
 .popup{
   background-color: blueviolet;
   color:  black;
@@ -315,7 +353,7 @@ line-height: normal;
   animation-name: animatetop;
   animation-duration: 0.4s
 }
-
+/*Animation for the block above*/
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
@@ -393,8 +431,6 @@ input[type="number"]
    textarea {
     border: none;
     outline: none;
-
-   
   }
 
 .edit_contact .edit_contact_maincontainer 
@@ -626,30 +662,3 @@ line-height: normal;
   height: auto;
 }
 
-footer{
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-}
-
-.tagline{
-color: #C2C2C2;
-text-align: center;
-font-size: 15px;
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-line-height: 25.55px;
-letter-spacing: -0.307px;
-}
-
-.tagline_active{
-  color: #A50113;
-text-align: center;
-font-size: 15px;
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-line-height: 25.55px;
-letter-spacing: -0.307px;
-}

@@ -30,9 +30,6 @@ function displayname(){
     const fname = document.getElementById('e_fname');
     const lname = document.getElementById('e_lname');
     const rel = document.getElementById("e_relation");
-
-
-
     const contact_name = document.getElementById('contact_name1');
    
     contact_name.innerHTML = e_fname.value +" "+ e_lname.value;

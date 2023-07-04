@@ -8,7 +8,7 @@
     <meta name="keywords" content="SOS, Help, Tracking">
 
     
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="/sospicious\www\css\general.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -21,13 +21,13 @@
 
         </div>
         <div class="general_header_loc">
-            <a href="#"><img src="https://www.freeiconspng.com/uploads/location-icon-map-png--1.png" class="general_header_loc_img" /></a>
-            <form>
-                <input type="text" id="location" placeholder="Your current location" class="general_header_loc_label">
-            </form>
+            <a href="#"><img src="\sospicious\res\screen\android\LocationIcon.png" class="general_header_loc_img"/></a>
+            <div class="general_header_loc_label" id="curr_loc">Your current location</div>
         </div>
     </div>
 
+    <!--Proceed with caution when putting stuff in these containers,
+        they can be very unpredictable and would pretty much cause weird bugs-->
     <div class="main_container">
         <div class="content_container">
         </div>
@@ -37,12 +37,14 @@
 
 
 
-<!--Bottom Navbar, kind of messy-->
+<!--Bottom navbar-->
 <footer>
     <nav class="nav_bar">
         <ul class ="nvb_items" style="left: 0; position: relative;">
             <li>
                 <a href="general.html">
+                    <!--ACTIVE puts the upper red border on navbar items-->
+                    <!--tagline_active puts the red font color on text-->
                     <div class="items ACTIVE">
                         <img src="\sospicious\res\screen\android\HomeACTIVE.png" class="item_img">
                         <p class="tagline_active">Home</p>
@@ -50,7 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="commute.html">
                     <div class="items">
                         <img src="\sospicious\res\screen\android\CommuteIcon.png" class="item_img">
                         <p class="tagline">Commute</p>
@@ -66,7 +68,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="profile.html">
                     <div class="items">
                         <img src="\sospicious\res\screen\android\ProfileIcon.png    " class="item_img">
                         <p class="tagline">Profile</p>
