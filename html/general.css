@@ -295,14 +295,11 @@ line-height: normal;
 }
 
 .edit_contact{
-  margin: 10%;
-  
   display: none;
-  position: fixed;
-
-  top: 0;
-  left: 0;
-  bottom: 0;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
 
   height: 100%;
   width: 100%;
@@ -313,6 +310,7 @@ line-height: normal;
   border-color: black;
   border-style: solid;
   border-radius: 10px;
+  box-shadow: 0px -100px 20px 100px rgba(0,0,0,0.3);
 
   animation-name: animatetop;
   animation-duration: 0.4s
@@ -395,6 +393,8 @@ input[type="number"]
    textarea {
     border: none;
     outline: none;
+
+   
   }
 
 .edit_contact .edit_contact_maincontainer 
@@ -409,7 +409,14 @@ font-style: normal;
 font-weight: 700;
 line-height: 10px;
 letter-spacing: -0.2px;
-border-bottom: black solid 3px;
+border-bottom: black solid 1px;
+
+display: flex;
+width: auto;
+height: auto;
+flex-shrink: 0;
+overflow: hidden;
+text-overflow: ellipsis;
   }
 
   .edit_contact .edit_contact_maincontainer 
@@ -432,23 +439,50 @@ border-bottom: black solid 3px;
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin: 5px;
     flex: 0 0 auto;
+    
   }
 
   .ec_content_button button{
-
-width: 130px;
-height: 40px;
-flex-shrink: 0;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     padding: 5%;
   }
 
+  .cancel_btn{
+    background-color: white;
+    color: red;
+    border: red solid 5px;
+    border-radius: 15px;
+
+
+    font-size: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .confirm_btn{
+    background-image: radial-gradient(#FC001C, #A50101);
+    color: white;
+
+
+    font-size: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 15px;
+  }
+
   input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+  input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -459,17 +493,24 @@ input::-webkit-inner-spin-button {
 
 .add_contact{
   display: none;
-  position: fixed;
-  left: 25%;
-  bottom: -25%;
-  height: 600px;
-  width: 388px;
-  overflow-y: scroll;
-  
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+
+  height: 100%;
+  width: 100%;
+
+  overflow: auto;
+
   background-color: white;
   border-color: black;
   border-style: solid;
   border-radius: 10px;
+  box-shadow: 0px -100px 20px 100px rgba(0,0,0,0.3);
+
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
 
 .add_container_header{
@@ -494,7 +535,7 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
 }
 
-.contact_container button{
+.edit_btn{
   background-color: red;
   border-radius: 8px;
   background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
@@ -506,6 +547,54 @@ input::-webkit-inner-spin-button {
   padding-left: 0px;
   padding-top: 5px;
 }
+
+.add_contact .edit_contact_maincontainer 
+input[type="text"],
+input[type="date"],
+input[type="email"],
+   textarea {
+color:black;
+font-size: 10px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 700;
+line-height: 10px;
+letter-spacing: -0.2px;
+border-bottom: black solid 1px;
+display: flex;
+width: auto;
+height: auto;
+flex-shrink: 0;
+overflow: hidden;
+border-radius: 4px;
+background: rgba(136,135,156,0.05);
+  }
+
+  .borderless{
+    border: none;
+
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.2px;
+  }
+
+  input[type="number"]
+  textarea{
+    color: var(--s, #59597C);
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.2px;
+    border-radius: 10px;
+    border: none;
+    border-width: 0px;
+    }
+
 
 .em_name_container img{
 width: 20px;
@@ -520,8 +609,6 @@ font-family: Roboto;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-
-
 }
 
 .em_nr_rel{  
