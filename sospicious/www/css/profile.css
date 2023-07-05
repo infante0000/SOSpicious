@@ -34,8 +34,8 @@ body {
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+        /*padding:75px 0px 75px 170px;*/  /* padding-top + padding-bottom + text area = image height */
+        /*margin:-90px 0px 0px -198px;*/  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
 }
@@ -51,7 +51,18 @@ h1 {
     text-align:center;
 }
 
-#profile_firstname{
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.divider {
+    margin: 0px 0px 0px -30px;
+}
+
+.profile-name-div > #profile_firstname,
+.health_user_details > #profile_age
+{
     color: rgba(252,0,28,0.8);
 }
 
@@ -130,6 +141,7 @@ h1 {
     align-items: center;
     gap: 30px;
     cursor: pointer;
+    padding: 5px;
 }
 
 .profile_navs_item:hover{
@@ -224,3 +236,183 @@ h1 {
     text-align: left;
     width: 250px;
 }
+
+/*PROFILE HEALTH CSS START*/
+
+.profile_health {
+    width: 300px;
+    margin: 0px 0px 0px -20px;
+}
+
+.health_profile {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.health_user_details {
+    display: inline-flex;
+}
+
+.health_user_details > h1{
+    color: #333E63;
+    font-size: 14px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.health_details{
+    color: #333E63;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#user_weight, #user_height, #user_blood{
+    color: rgba(252, 0, 28, 0.80);
+}
+
+.health_header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.health-profile-pic{
+    border-radius: 100px;
+    border: 2px solid #FFBF00;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#health_edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border-color: #A50101;
+    background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+}
+
+#health_edit > img {
+    width: 25px;
+    height: 25px;
+    align-content: center;
+}
+
+.health_record {
+    width: fit-content;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.10);
+}
+
+.hrec_header {
+    border-radius: 8px 8px 0px 0px;
+    background: rgba(252, 189, 0, 0.80);
+    display: flex;
+    width: 230px;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.hrec_header > h2 {
+    color: #1A1717;
+    text-align: center;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/*edit modal*/
+html.modal-active, body.modal-active {
+    overflow: hidden;
+  }
+  
+#modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 1;
+}
+
+#modal-container .modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    vertical-align: middle;
+}
+
+  #modal-container .modal-background .modal {
+    background: white;
+    color: #1A1717;
+    padding: 50px;
+    display: inline-block;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-weight: 300;
+    position: relative;
+}
+
+.input-field{
+    margin-top: 30px;
+}
+
+.input-field > input, .input-field > select{
+    border-radius: 4px;
+    background: rgba(231, 184, 184, 0.233);
+    color: #1A1717;
+    height: 40px;
+    display: inline-block;
+    padding: 0px 0px 0px 15px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: auto;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.input-field > span {
+    position:absolute;
+    align-items: center;
+    top:13px;   
+    right: 30px;
+}
+
+input::placeholder {
+    color: #131111;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.3;
+}
+/*PROFILE HEALTH CSS END*/

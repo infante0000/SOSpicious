@@ -6,9 +6,15 @@ const file = document.querySelector('#profile_picfile');
 const uploadBtn = document.querySelector('#profile_uploadPic');
 var profileFName = document.getElementById("profile_firstname");
 var profileLName = document.getElementById("profile_lastname");
+var health_Weight = document.getElementById("user_weight");
+var health_Height = document.getElementById("user_height");
+var health_blood = document.getElementById("user_blood");
 
-profile_firstname.innerHTML = " Vinci";
-profile_lastname.innerHTML = " Malizon";
+profile_firstname.innerHTML = 'Vinci'+'&nbsp;';
+profile_lastname.innerHTML = "Malizon"+',&nbsp;';
+user_weight.innerHTML = '67'+'&nbsp;kg';
+user_height.innerHTML = '172'+'&nbsp;cm';
+user_blood.innerHTML = 'A+';
 //if user hover on img div 
 
 imgDiv.addEventListener('mouseenter', function(){
@@ -39,7 +45,7 @@ file.addEventListener('change', function(){
     }
 });
 
-/** PROFILE NAVIGVATION TABS */
+/** PROFILE NAVIGATION TABS */
 //PROFILE - LOGOUT
 let logoutModal = document.getElementById("logout_popup");
 let appContent = document.getElementById("profile_contents");
@@ -51,4 +57,18 @@ function openLogoutModal() {
 function closeLogoutModal() {
     logoutModal.classList.remove("open-logoutModal");
     appContent.classList.remove("bg-blurred");
+}
+
+/**PROFILE HEALTH */
+function editHRecord(){
+    $('#health_edit').click(function(){
+        //var buttonId = $(this).attr('id');
+        $('#modal-container').removeAttr('class').addClass('two');
+        $('body').addClass('modal-active');
+      })
+      
+      /*$('#modal-container').click(function(){
+        $(this).addClass('out');
+        $('body').removeClass('modal-active');
+      });*/
 }
