@@ -15,24 +15,29 @@
         </div>
 
         <div class="commute2_send">
-            <label for="commute2_send_to">Send to:</label>
-            <img class="commute2_img" src="../img/Chips Input.png" alt="mom">
-            <img class="commute2_img" src="../img/Chips Input (1).png" alt="">
+            <div>
+                <label for="commute2_send_to">Send to:</label>
+            </div>
+            <div>
+                <input type="text" class="commute2_transparent">
+            </div>
+            <!-- <img class="commute2_img" src="../img/Chips Input.png" alt="mom">
+            <img class="commute2_img" src="../img/Chips Input (1).png" alt=""> -->
         </div>
 
         <div class="commute2_loc">
-            <img class="commute2_pin" src="../img/map-pin.png" alt="map-pin">
-            <input class="commute2_input" type="text">
+            <img class="commute2_pin" src="../img/map-pin-c.svg" alt="map-pin">
+            <input class="commute2_input" type="text" required>
             <br>
-            <img class="coomute2_taxi" src="../img/ph_taxi-light.png" alt="taxi">
-            <input class="commute2_input" type="text">
+            <img class="commute2_taxi" src="../img/ph_taxi-light.svg" alt="taxi">
+            <input class="commute2_input" type="text" required>
         </div>
         <form action="#" class="form">
             <div class="commute2_column">
                 <div class="commute2_col">
                     <label class="commute2_label" for="commute2_vehicle">Type</label>
                     <div class="commute2_dropdown">
-                    <select name="commute2_vehicle" class="commute2_same">
+                    <select name="commute2_vehicle" id="commute2_option" class="commute2_same" required>
                         <option value="Taxi">Taxi</option>
                         <option value="Bus">Bus</option>
                         <option value="Tricycle">Tricycle</option>
@@ -43,7 +48,7 @@
                     <div class="commute2_col">
                         <label class="commute2_label"  for="commute2_plate_number">Plate Number</label>
                         <div class="commute2_pt">
-                        <input class="commute2_same" type="text" placeholder="ABC 1234">
+                        <input class="commute2_same" id="try" type="text" placeholder="ABC 1234">
                     </div>
                     </div>
             </div>
@@ -60,7 +65,8 @@
             <label class="commute2_label"  for="commute2_details">Other Details</label>
 
             <div>
-                <input id="commute2_details" class="commute2_same" type="text" size="40">
+                <textarea name="" id="commute2_textarea" cols="43" rows="6" class="commute2_same"></textarea>
+                
             </div>
         </div>
 
