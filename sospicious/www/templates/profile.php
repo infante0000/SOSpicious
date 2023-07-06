@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
-    require_once "../php/config.php";
     require_once "../php/connect.php";
     session_start();
-    $db = new Database();
     serialize($conn);
     $user_id = 1;
 
