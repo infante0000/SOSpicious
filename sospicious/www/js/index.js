@@ -13,16 +13,16 @@ showPassword.addEventListener("click", function(){
     passwordField.setAttribute('type', type);
 });
 /******Change to LOGIN SECTION/REGISTER SECTION********** */
-var login = document.getElementById("LOGIN");
-var register = document.getElementById("REGISTER");
+// var login = document.getElementById("LOGIN");
+// var register = document.getElementById("REGISTER");
 
-function changetoRegister(){
-    login.style.display = "none";
-    register.style.display = "block";
-}
+// function changetoRegister(){
+//     login.style.display = "none";
+//     register.style.display = "block";
+// }
 
-function changetoLogin(){
-    register.style.display = "none";
-    login.style.display = "block";
-}
+// function changetoLogin(){
+//     register.style.display = "none";
+//     login.style.display = "block";
+// }
 

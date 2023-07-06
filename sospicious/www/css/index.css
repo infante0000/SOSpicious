@@ -138,7 +138,8 @@ body{
     font-size: 1.2rem;
     color: #000;
 }
-#showPassword{
+.loginShowpass,
+.signupShowpass{
     position: absolute;
     top: 62%;
     right: 15px;
@@ -147,6 +148,12 @@ body{
     color: #151316;
     cursor: pointer;
 }
+.signupShowpass{
+    top: 25%;
+    right: 33px;
+    font-size: 1rem;
+}
+
 .login_forgot {
     margin-top: -1rem;
     text-align: right;
@@ -214,14 +221,15 @@ body{
     margin: 1.5rem 0;
 }
 
-#LOGIN{
-    /* display: none; */
+/* #LOGIN{
+    display: none; 
     display: block;
-}
-#REGISTER{
-    /* display: block; */
+} */
+
+/* #REGISTER{
+    display: block;
     display: none;
-}
+} */
 
 @media (min-width: 500px){
     body{
