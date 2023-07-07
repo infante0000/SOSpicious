@@ -25,7 +25,9 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/profile.css">
+
         <title>SOSpicious</title>
     </head>
     <body>
@@ -110,6 +112,9 @@
                 </div>
             
         </div>
+        
+    
+        <!--#include virtual="footer.html" -->
         <script src="cordova.js"></script>
         <script src="../js/profile.js"></script>
     </body>

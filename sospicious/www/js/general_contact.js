@@ -16,14 +16,3 @@ function enterwin(id){
         element.style.display = 'block';
     }
 }
-
-
-function duplicateCard() {
-
-    var source = document.getElementById("contact_card");
-    var dest = document.getElementById("contact_container");
-
-    var clone = source.cloneNode(true);
-    dest.appendChild(clone);
-}
-

@@ -23,7 +23,6 @@
 <body>
     <?php
         $select = mysqli_query($conn, "SELECT * FROM `sos_contacts` WHERE user_id = '$user_id'") or die('query failed');
-        $rows = array();
         if(mysqli_num_rows($select) > 0){
             $fetch = mysqli_fetch_assoc($select);
         }
@@ -59,34 +58,39 @@
         
         <div class="contact_container" id="contact_container">
                 <?php
+                    $select = mysqli_query($conn, "SELECT * FROM `sos_contacts` WHERE user_id = '$user_id'") or die('query failed');
+                    $rows = array();
+                
                     if(mysqli_num_rows($select) > 0){
                         while ($row = mysqli_fetch_assoc($select)) {
                             $rows[] = $row; // Store each row in the array
                         }
-                        $fetch = mysqli_fetch_assoc($select);
                     }
 
                     foreach ($rows as $row) {
+                        $conPic = $row['con_picture'];
                         $conFName = $row['con_fname'];
                         $conLName = $row['con_lname'];
                         $conRelation = $row['con_relation'];
-                        echo "<script src='../js/profile.js'></script>";
+
+                        echo '<div id="contact_card">';
+                        echo '<span>';
+                        echo '<img src="' . $conPic . '" class="contact_img" id="contact_image1">';
+                        echo '</span>';
+                    
+                        echo '<div class="em_nr_cont">';
+                        echo '<span id="contact_name1" style="text-align: left;" class="em_nr_name"><b>' . $conFName . ' ' . $conLName . '</b></span>';
+                        echo '<span id="contact_relation1" style="text-align: left;" class="em_nr_rel">' . $conRelation . '</span>';
+                        echo '</div>';
+                    
+                        echo '<button id="editcontact" onclick="enterwin(this.id + \'1\')" type="btn" class="edit_btn">';
+                        echo '<img src="../img/Edit.png">';
+                        echo '</button>';
+                    
+                        echo '</div>';
                     }
                 ?>
-            <div id="contact_card">
-                <span> 
-                    <img src="<?php echo $fetch['con_picture']; ?>" class="contact_img" id="contact_image1">
-                </span>
 
-                <div class="em_nr_cont">
-                    <span id="contact_name1"  style="text-align: left;" class="em_nr_name"><b><?php echo $fetch['con_fname']; ?> <?php echo $fetch['con_lname']; ?></b></span>
-                    <span id="contact_relation1" style="text-align: left;"  class="em_nr_rel"><?php echo $fetch['con_relation']; ?></span>
-                </div>
-
-                <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn" class="edit_btn">
-                    <img src="../img/Edit.png">
-                </button>  
-            </div>
             
         </div>
 
