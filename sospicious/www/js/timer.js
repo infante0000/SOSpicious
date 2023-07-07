@@ -25,6 +25,8 @@ let remainingPathColor = COLOR_CODES.info.color;
 var pinContainer = document.querySelector(".cancel_pincode-form");
 var pinLabel = document.querySelector(".cancel_label");
 var pinSent = document.querySelector(".cancel_sent");
+var Container = document.querySelector(".cancel_container");
+var home = document.querySelector(".home_container");
 
 document.getElementById("cancel_timer").innerHTML = `
 <div class="base-timer">
@@ -50,7 +52,7 @@ document.getElementById("cancel_timer").innerHTML = `
 </div>
 `;
 
-startTimer();
+// startTimer();
 
 
 
@@ -59,6 +61,8 @@ function onTimesUp() {
     pinContainer.style.display = "none";
     pinLabel.style.display = "none";
     pinSent.style.display = "block";
+    Container.style.display = "none";
+    home.style.display = "grid";
 }
 
 function startTimer() {
