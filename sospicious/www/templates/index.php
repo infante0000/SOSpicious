@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    include("../php/connect.php");
-    include("../php/function.php");
+    require_once("../php/connect.php");
+    require_once("../php/function.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //something was posted

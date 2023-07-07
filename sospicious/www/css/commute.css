@@ -7,6 +7,9 @@
 
 body {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .commute_container{
@@ -42,11 +45,12 @@ body {
    font-weight: 700;
 }
 
+/* start of commute page 2 */
+
 .commute2_container{
     display: grid;
-    grid-template-rows: .5fr .5fr .5fr .5fr .5fr .5fr .5fr ;
-    margin: 100px 20px;
-    row-gap: 10px;
+    row-gap: 20px;
+    margin: 30px;
 }
 
 .commute2_two_buttons{
@@ -59,12 +63,13 @@ body {
     text-shadow: 0px 1.5px 2px 0px rgba(0, 0, 0, 0.25);
     font-size: 15px;
     font-weight: 600;
-    width: 161px;
+    width: 150px;
     height: 40px;
     flex-shrink: 0;
     border-radius: 20px 20px 0px 0px;
     background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
     text-transform: uppercase;
+    border: 1px solid #A50101;
 }
 
 .commute2_history{
@@ -75,10 +80,10 @@ body {
     width: 167px;
     height: 40px;
     flex-shrink: 0;
-    border-radius: 0px 20px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
     background: #D9D9D9;
     text-transform: uppercase;
-
+    border: 1px solid #D9D9D9;
 }
 
 .commute2_send{
@@ -95,6 +100,7 @@ body {
     display: block;
     padding: 12px 72px 11px 20px;
     align-items: center;
+    text-align: center;
     border-radius: 8px;
     background: #A50113;
 }
@@ -106,21 +112,32 @@ body {
         border-bottom: 1px solid white;
 }
 
-.form{
+/* .form{
     margin-top: 10px;
-}
+} */
 
 .form .commute2_column .commute2_same{
     position: relative;
     height: 50px;
-    width: 160px;
+    width: 150px;
     outline: none;
     padding: 10px;
 }
 
-.form .commute2_column{
+.commute2_same{
+    border: none;
+    padding: 10px;
+}
+
+
+.commute2_column{
     display: flex;
-    column-gap: 15px;
+    column-gap: 30px;
+}
+
+.commute2_driver{
+    display: block;
+    position: relative;
 }
 
 .commute2_share{
@@ -131,6 +148,7 @@ body {
     background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
     color: white;
     text-transform: uppercase;
+    border: 1px solid #A50101;
 }
 
 .commute2_label{
@@ -151,5 +169,37 @@ body {
     flex-shrink: 0;
     border-radius: 15px;
     text-transform: uppercase;
+    color: #A50101;
+    border: 1px solid #A50101;
+}
+
+
+input[type="text"], textarea{
+
+    background-color: rgba(136, 135, 156, 0.2); 
+    border-bottom: 1px solid rgba(166, 166, 166, 1);
+  
+  }
+
+textarea:focus, input:focus {
+    color: black;
+}
+
+input, select, textarea{
+    color: #000;
+}
+
+.commute2_dropdown{
+    background: transparent !important;
+ color: #ffffff;
+}
+
+.commute2_loc input{
+    color: white;
+    background-color: transparent;
+}
+
+.jd{
+    padding: 50px;
 }
 

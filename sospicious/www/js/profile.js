@@ -1,31 +1,32 @@
 //declaring html elements
 
-const imgDiv = document.querySelector('.profile-pic-div');
+// const imgDiv = document.querySelector('.profile-pic-div');
 const img = document.querySelector('#profile_pic');
-const file = document.querySelector('#profile_picfile');
+const file = document.querySelector('#edit_profilepic');
 const uploadBtn = document.querySelector('#profile_uploadPic');
 var profileFName = document.getElementById("profile_firstname");
 var profileLName = document.getElementById("profile_lastname");
 var health_Weight = document.getElementById("user_weight");
 var health_Height = document.getElementById("user_height");
 var health_blood = document.getElementById("user_blood");
+var profileUN = document.getElementById("profile_username");
 
-profile_firstname.innerHTML = 'Vinci'+'&nbsp;';
-profile_lastname.innerHTML = "Malizon"+',&nbsp;';
-user_weight.innerHTML = '67'+'&nbsp;kg';
-user_height.innerHTML = '172'+'&nbsp;cm';
-user_blood.innerHTML = 'A+';
+// profileFName.innerHTML = "Vinci&nbsp;";
+// profileLName.innerHTML = "Malizon"+'&nbsp;';
+/*health_Weight.innerHTML = '67'+'&nbsp;kg';
+health_Height.innerHTML = '172'+'&nbsp;cm';
+health_blood.innerHTML = 'A+';*/
 //if user hover on img div 
 
-imgDiv.addEventListener('mouseenter', function(){
-    uploadBtn.style.display = "block";
-});
+// imgDiv.addEventListener('mouseenter', function(){
+//     uploadBtn.style.display = "block";
+// });
 
-//if we hover out from img div
+// //if we hover out from img div
 
-imgDiv.addEventListener('mouseleave', function(){
-    uploadBtn.style.display = "none";
-});
+// imgDiv.addEventListener('mouseleave', function(){
+//     uploadBtn.style.display = "none";
+// });
 
 //when user clicked to upload a photo
 
@@ -47,18 +48,22 @@ file.addEventListener('change', function(){
 
 /** PROFILE NAVIGATION TABS */
 //PROFILE - LOGOUT
-let logoutModal = document.getElementById("logout_popup");
-let appContent = document.getElementById("profile_contents");
 
+function toggleClass(elementId, className, action) {
+    let element = document.getElementById(elementId);
+    element.classList[action](className);
+}
+  
 function openLogoutModal() {
-    logoutModal.classList.add("open-logoutModal");
-    appContent.classList.add("bg-blurred");
+    toggleClass("logout_popup", "open-logoutModal", "add");
+    toggleClass("profile_contents", "bg-blurred", "add");
 }
+  
 function closeLogoutModal() {
-    logoutModal.classList.remove("open-logoutModal");
-    appContent.classList.remove("bg-blurred");
+    toggleClass("logout_popup", "open-logoutModal", "remove");
+    toggleClass("profile_contents", "bg-blurred", "remove");
 }
-
+  
 /**PROFILE HEALTH */
 function editHRecord(){
     $('#health_edit').click(function(){

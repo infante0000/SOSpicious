@@ -26,10 +26,14 @@ function enterwin(id){
             This way, we can reduce uncessary codes in JS and have it a bit cleaner than what it currently is. For a demo of what
             it could also look like, please refer to contacts.html, on line 39
 */
+
+const email_add="";
+
 function displayname(){
     const fname = document.getElementById('e_fname');
     const lname = document.getElementById('e_lname');
     const rel = document.getElementById("e_relation");
+    const email_add = document.getElementById('e_email_add');
     const contact_name = document.getElementById('contact_name1');
    
     contact_name.innerHTML = e_fname.value +" "+ e_lname.value;

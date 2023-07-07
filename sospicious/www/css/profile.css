@@ -40,6 +40,87 @@ body {
     }
 }
 
+/*Bottom Navbar styles*/ 
+.nav_bar{
+    background: white;
+    height: 12%;
+    width: 100vw;
+    overflow: hidden;
+    bottom: 0;
+    position: fixed;
+    padding: 0px 8px 8px 8px;
+  }
+
+  .items{
+    display:flex;
+    align-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: -10px;
+    color: #F2F3F5;
+    outline: #000;
+  }
+
+  .item_img {
+    height: 30px;
+    width: 30px;
+    
+  }
+
+  .nvb_items{ 
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-left: -10%;
+  }
+
+  .nvb_items > *{
+    flex: 0 0 auto;
+    font-weight: bold;
+  }
+
+  .ACTIVE{
+    color: red;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top: 5px;
+    border-style: solid;
+    border-top-color: #A50113;
+    margin-top: -20px;
+  }
+
+  footer{
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+  }
+  
+  .tagline{
+  color: #C2C2C2;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
+  }
+  
+  .tagline_active{
+    color: #A50113;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
+  }
+
 h1 {
     color: #000;
     font-size: 24px;
@@ -49,6 +130,7 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+    text-transform: uppercase;
 }
 
 p {
@@ -56,12 +138,17 @@ p {
     margin-block-end: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .divider {
     margin: 0px 0px 0px -30px;
 }
 
 .profile-name-div > #profile_firstname,
-.health_user_details > #profile_age
+.health_user_details > #profile_age,
+#profile_username
 {
     color: rgba(252,0,28,0.8);
 }
@@ -96,7 +183,7 @@ p {
     object-fit: cover;
 }
 
-#profile_picfile{
+#edit_profilepic{
     display: none;
 }
 
@@ -113,7 +200,7 @@ p {
     color: rgba(194,194,194,1);
     font-size: 10px;
     cursor: pointer;
-    display: none;
+    display: block;
 }
 
 .profile-name-div {
@@ -377,6 +464,7 @@ html.modal-active, body.modal-active {
 
 .input-field{
     margin-top: 30px;
+    font-family: Poppins;
 }
 
 .input-field > input, .input-field > select{
@@ -416,3 +504,105 @@ input::placeholder {
     opacity: 0.3;
 }
 /*PROFILE HEALTH CSS END*/
+
+/*############### PROFILE EDIT CSS -START- ###################*/
+form {
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field > label{
+    color: var(--9-f-9-fb-9, #88879C);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    display: flex;
+    align-items: left;
+}
+
+.fields .input-field{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.fields .input-field input{
+    border-radius: 4px;
+    background-color: #d8d8df47;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: var(--9-f-9-fb-9, #88879c3e);
+}
+
+.fields .input-field input:focus{
+    border-color: var(--9-f-9-fb-9, #88879ceb);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.editForm, .profile_header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#saveBtn {
+    padding: 10px 15px;
+    width: 100px;
+    margin: 2px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 15px;
+    outline: 0;
+    border-width: 0;
+    background-image: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+}
+
+#cancelBtn {
+    padding: 10px 15px;
+    width: 100px;
+    margin: 2px;
+    color: #A50101;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    position: relative;
+    border-radius: 15px;
+    outline: 0;
+    border-width: 0;
+}
+
+#cancelBtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px; 
+    padding: 4px; 
+    background:radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;         
+}
+
+/*############### PROFILE EDIT CSS -END- ###################*/
+
+
