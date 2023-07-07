@@ -59,7 +59,7 @@ body{
 }
 
 .logo-login{
-    height: clamp(7rem, 10rem, 12rem);
+    height: clamp(5rem, 7rem, 12rem);
 }
 
 
@@ -69,11 +69,11 @@ body{
     background: rgba(165, 1, 19, 0.20);
     backdrop-filter: blur(40px);
     padding: 1.5rem;
-    height: 100vh;
+    height: 100%;
     width: clamp(300px, 100%, 500px);
     overflow: scroll;
     transition: all 0.3s ease;
-    z-index: 1;
+    z-index: 99;
     /* margin-top: 5%; */
 }
 .login-form h1,
