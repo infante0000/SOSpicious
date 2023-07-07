@@ -1,5 +1,10 @@
-<!DOCTYPE html>
+<?php
+    require_once "../php/connect.php";
+    session_start();
+    $user_id = 1;
+?>
 
+<!DOCTYPE html>
 <head>
     <title>SOSpicious!</title>
     <meta charset="UTF-8"/>
@@ -7,36 +12,43 @@
     <meta name = "description" content="Mobile application for tracking and seeking emeregncy responses">
     <meta name="keywords" content="SOS, Help, Tracking">
     
-    <link rel="stylesheet" href="/sospicious\www\css\general.css">
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="/sospicious\www\js\general_contact.js"></script>
+    <script src="../js/general_contact.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body >
+<body>
+    <?php
+        $select = mysqli_query($conn, "SELECT * FROM `sos_contacts` WHERE user_id = '$user_id'") or die('query failed');
+        $rows = array();
+        if(mysqli_num_rows($select) > 0){
+            $fetch = mysqli_fetch_assoc($select);
+        }
+    ?>
     <!--NOTE: This (and general.html) uses its own css file named "general.css";
         It has global changes to certain tags, like body, div, and button.
         Please be advised when adding new stuff-->
     <div class="general_header">
         <div>
-            <img src="\sospicious\res\screen\android\sos-logo 2.png" alt="SOS logo" class="g_SOS_logo" >
+            <img src="../img/sos-logo 2.png" alt="SOS logo" class="g_SOS_logo" >
         </div>
 
         <div class="em_name_container">
-            <img src="\sospicious\res\screen\android\Search_alt_light.png">
+            <img src="../img/Search_alt_light.png">
             <form>
                 <input type="text" id="em_name" placeholder="Search..." class="em_name_sb" maxlength="60">
             </form>
         </div>
-    </div>
-
+        
     <div class="main_container">
         
         <div class="content_header">
             <span><b>Emergency Contact(s)</b></span>
             <a href="#">
-                <span style="color: red;" id="addcontact" onclick="enterwin(this.id+'1')"><b>Add More+</b></span>
+                <span style="color: red;" id="addcontact" onclick="enterwin(this.id+'1')"><b>Add More +</b></span>
             </a>
         </div>
 
@@ -45,21 +57,39 @@
             Since that includes the add and edit function as well. 
             EDIT: Actually even if you skip the add part, I *think* walang mangyayaring masama-->
         
-        <div class="contact_container">
-            <span> 
-                <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="contact_image1">
-            </span>
+        <div class="contact_container" id="contact_container">
+                <?php
+                    if(mysqli_num_rows($select) > 0){
+                        while ($row = mysqli_fetch_assoc($select)) {
+                            $rows[] = $row; // Store each row in the array
+                        }
+                        $fetch = mysqli_fetch_assoc($select);
+                    }
 
-            <div class="em_nr_cont">
-                <span id="contact_name1"  style="text-align: left;" class="em_nr_name"><b>Placeholder Name</b></span>
-                <span id="contact_relation1" style="text-align: left;"  class="em_nr_rel"> Relationship</span>
+                    foreach ($rows as $row) {
+                        $conFName = $row['con_fname'];
+                        $conLName = $row['con_lname'];
+                        $conRelation = $row['con_relation'];
+                        echo "<script src='../js/profile.js'></script>";
+                    }
+                ?>
+            <div id="contact_card">
+                <span> 
+                    <img src="<?php echo $fetch['con_picture']; ?>" class="contact_img" id="contact_image1">
+                </span>
+
+                <div class="em_nr_cont">
+                    <span id="contact_name1"  style="text-align: left;" class="em_nr_name"><b><?php echo $fetch['con_fname']; ?> <?php echo $fetch['con_lname']; ?></b></span>
+                    <span id="contact_relation1" style="text-align: left;"  class="em_nr_rel"><?php echo $fetch['con_relation']; ?></span>
+                </div>
+
+                <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn" class="edit_btn">
+                    <img src="../img/Edit.png">
+                </button>  
             </div>
-
-             
-            <button id="editcontact" onclick="enterwin(this.id+'1')" type="btn" class="edit_btn">
-                <img src="\sospicious\res\screen\android\Edit.png">
-            </button>
             
+        </div>
+
             <!--
                 ID NAMES
                     Full Name: fullname
@@ -75,12 +105,12 @@
             <!--Editing and Adding Contacts have almost the same containers, save for their buttons. If there needs
                 CSS changes, just look at the ones used here on the general.css page
                 Another thing, the modals are fixed; As long as they fit in the screen it won't support scrolling-->
-            <div id="editcontact1" class="edit_contact">
+                <div id="editcontact1" class="edit_contact">
                  <a class="close" onclick="outwin(editcontact1.id)">&times;</a>
                   <div class="edit_contact_maincontainer">
                         <!--The first one with image-->
                         <div class="ec_container_header">
-                            <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="e_contact_image1">
+                            <img src="../img/profile_temp.png" class="contact_img" id="e_contact_image1">
                             <div class="ec_content_nr">
                                 <span id="e_fullname"><b>Name</b></span>
                                 <span style="color: red;" id="relation">Relationship</span>
@@ -171,7 +201,7 @@
                 <div class="edit_contact_maincontainer">
                     <!--The first partition with image-->
                     <div style="align-items: center;">
-                        <img src="\sospicious\www\img\profile_temp.png" class="contact_img" id="a_contact_image1">
+                        <img src="../img/profile_temp.png" class="contact_img" id="a_contact_image1">
                     </div>
                     <!--First and Last name-->
                     <div class="ec_content_container">
@@ -236,11 +266,7 @@
                    
             </div>
         </div>
-    </div>
-
-
-
-
+            </div>
 
 <!--Bottom navbar; please avoid messing with the spacing unless the navbar itself is causing crashes-->
     <footer>
@@ -250,7 +276,7 @@
                     <a href="general.html">
                         <!--This div creates a partition between the icon and text, allowing it to have an icon + tagline-->
                         <div class="items">
-                            <img src="\sospicious\res\screen\android\HomeIcon.png" class="item_img">
+                            <img src="../img/HomeIcon.svg" class="item_img">
                             <p class="tagline">Home</p>
                         </div>
                     </a>
@@ -258,7 +284,7 @@
                 <li>
                     <a href="commute.html">
                         <div class="items">
-                            <img src="\sospicious\res\screen\android\CommuteIcon.png" class="item_img">
+                            <img src="../img/CommuteIcon.svg" class="item_img">
                             <p class="tagline">Commute</p>
                         </div>
                     </a>
@@ -268,7 +294,7 @@
                         <!--The ACTIVE class can be used on other footers so long as the page is currently in use-->
                         <!--The tagline_active is for the text, while the ACTIVE is for the red top border-->
                         <div class="items ACTIVE">
-                            <img src="\sospicious\res\screen\android\ACTIVEContacts.png" class="item_img">
+                            <img src="../img/ContactsACTIVE.svg" class="item_img">
                             <p class="tagline_active">Contacts</p>
                         </div>
                     </a>
@@ -276,7 +302,7 @@
                 <li>
                     <a href="profile.html">
                         <div class="items">
-                            <img src="\sospicious\res\screen\android\ProfileIcon.png    " class="item_img">
+                            <img src="../img/ProfileIcon.svg" class="item_img">
                             <p class="tagline">Profile</p>
                         </div>
                     </a>
