@@ -116,8 +116,8 @@
                         <div class="ec_container_header">
                             <img src="../img/profile_temp.png" class="contact_img" id="e_contact_image1">
                             <div class="ec_content_nr">
-                                <span id="e_fullname"><b>Name</b></span>
-                                <span style="color: red;" id="relation">Relationship</span>
+                                <span id="e_fullname" name="e_fullname"><b>Name</b></span>
+                                <span style="color: red;" id="e_relation" name="e_relation">Relationship</span>
                             </div>
                         </div>
 
@@ -126,14 +126,14 @@
                             <div class="two_layers">
                                 <span>Name</span>
                                 <form> 
-                                    <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="e_fname">
+                                    <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="e_fname" name="e_fname">
                                 </form>
                             </div>
 
                             <div class="two_layers">
                                 <span>Last Name</span>
                                 <form>
-                                    <input type="text" placeholder="Last name" style="width: 70%;" maxlength="20" id="e_lname">
+                                    <input type="text" placeholder="Last name" style="width: 70%;" maxlength="20" id="e_lname" name="e_lname">
                                 </form>
                             </div>
 
@@ -143,7 +143,7 @@
                             <div class="two_layers">
                                 <span>Mobile No.</span>
                                 <form>
-                                    <input type="number" placeholder="09123456789" class="borderless" id="e_mobno" 
+                                    <input type="number" placeholder="09123456789" class="borderless" id="e_mobno" name="e_mobno" 
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     type = "number"
                                     maxlength = "11">
@@ -155,7 +155,7 @@
                             <div class="two_layers">
                                 <span>Email</span>
                                 <form>
-                                    <input type="email" placeholder="example@email.com" maxlength="40" id="e_email_add">
+                                    <input type="email" placeholder="example@email.com" maxlength="40" id="e_email_add" name="e_email_add">
                                 </form>
                             </div>
                         </div>
@@ -164,14 +164,14 @@
                             <div class="two_layers">
                                 <span>Birthday</span>
                                 <form>
-                                    <input type="date" id="bday">
+                                    <input type="date" id="bday" e="e_bday">
                                 </form>
                             </div>
 
                             <div class="two_layers">
                                 <span>Relationship</span>
                                 <form>
-                                    <input type="text" placeholder="Friend" maxlength="20" id="e_relation">
+                                    <input type="text" placeholder="Friend" maxlength="20" id="e_relation" name="e_relation">
                                 </form>
                             </div>
                         </div>
@@ -212,13 +212,13 @@
                         <div class="two_layers">
                             <span>Name</span>
                             <form> 
-                                <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="a_fname">
+                                <input type="text" placeholder="First name" style="width: 70%;" maxlength="20" id="a_fname" name="a_fname">
                             </form>
                         </div>
                         <div class="two_layers">
                             <span>Last Name</span>
                             <form>
-                                <input type="text" placeholder="Last name" style="width: 70%;"maxlength="20" id="a_lname"> 
+                                <input type="text" placeholder="Last name" style="width: 70%;"maxlength="20" id="a_lname" name="a_lname"> 
                             </form>
                         </div>
                     </div>
@@ -228,7 +228,7 @@
                             <span>Mobile No.</span>
                             <form>
                                 <!--Numbers ignore maxlength, so I needed to put in JS which checks for number count-->
-                                <input type="number" placeholder="09123456789" class="borderless" maxlength="11" id="a_mobno"
+                                <input type="number" placeholder="09123456789" class="borderless" maxlength="11" id="a_mobno" name="a_mobno"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "number"
                                 maxlength = "11">
@@ -240,7 +240,7 @@
                         <div class="two_layers">
                             <span>Email</span>
                             <form>
-                                <input type="email" placeholder="example@email.com" maxlength="50" id="a_email_add">
+                                <input type="email" placeholder="example@email.com" maxlength="50" id="a_email_add" name="a_email_add">
                             </form>
                         </div>
                     </div>
@@ -249,14 +249,14 @@
                         <div class="two_layers">
                             <span>Birthday</span>
                             <form>
-                                <input type="date" id="a_bday">
+                                <input type="date" id="a_bday" name="a_bday">
                             </form>
                         </div>
 
                         <div class="two_layers">
                             <span>Relationship</span>
                             <form>
-                                <input type="text" placeholder="Friend" maxlength="20" id="a_relation">
+                                <input type="text" placeholder="Friend" maxlength="20" id="a_relation" name="a_relation">
                             </form>
                         </div>
                     </div>
@@ -270,7 +270,14 @@
                    
             </div>
         </div>
-            </div>
+
+        <!--IMPORTANT: TESTING BUTTON; CAN BE USED FOR THE SOS BUTTON-->
+        <button class="confirm_btn" onclick="sendMail()"> Test Email Capabilities</button>
+    </div>
+
+
+
+
 
 <!--Bottom navbar; please avoid messing with the spacing unless the navbar itself is causing crashes-->
     <footer>
