@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#F2F3F5;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background: #F2F3F5;    
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-350px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        /*padding:75px 0px 75px 170px;*/  /* padding-top + padding-bottom + text area = image height */
+        /*margin:-90px 0px 0px -198px;*/  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    color: #000;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.divider {
+    margin: 0px 0px 0px -30px;
+}
+
+.profile-name-div > #profile_firstname,
+.health_user_details > #profile_age,
+#profile_username
+{
+    color: rgba(252,0,28,0.8);
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.profile-pic-div{
+    border-radius: 100px;
+    border: 2px solid #FFBF00;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#profile_pic{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#edit_profilepic{
+    display: none;
+}
+
+#profile_uploadPic{
+    font-family: Poppins;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgba(194,194,194,1);
+    font-size: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+.profile-name-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space:pre
+}
+
+.profile_navs{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    left: -25%;
+    margin-top: 40px;
+    width: 350px;
+}
+
+.profile_navs_item{
+    display: flex;
+    width: 350px;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.profile_navs_item:hover{
+    background-color: #e5e6e8;
+    border-radius: 10px;
+}
+
+.profile_navs_title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 230px;
+}
+
+.bg-blurred{
+    filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.logout_popup{
+    width: 300px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-logoutModal {
+    visibility: visible;
+    top: 100%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.logout_popup > img {
+    width:80px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.30);
+}
+
+.logout_popup > p {
+    font-family: Poppins;
+    font-size: 15px;
+}
+
+.logout_popup > button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.30);
+}
+
+.cancelLogout {
+    background: #fff;
+    color: #BA2515;
+    border-color: #BA2515; 
+}
+
+.confirmLogout {
+    background: #BA2515;
+    color: #F2F3F5;
+    border: 0;
+}
+
+
+.profile_navs_title h3 {
+    color: #000;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    bottom: -100px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.profile_navs_title span {
+    color: rgba(0, 0, 0, 0.30);;
+    font-size: 15px;
+    font-family: Poppins;
+    text-align: left;
+    width: 250px;
+}
+
+/*PROFILE HEALTH CSS START*/
+
+.profile_health {
+    width: 300px;
+    margin: 0px 0px 0px -20px;
+}
+
+.health_profile {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.health_user_details {
+    display: inline-flex;
+}
+
+.health_user_details > h1{
+    color: #333E63;
+    font-size: 14px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.health_details{
+    color: #333E63;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#user_weight, #user_height, #user_blood{
+    color: rgba(252, 0, 28, 0.80);
+}
+
+.health_header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.health-profile-pic{
+    border-radius: 100px;
+    border: 2px solid #FFBF00;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#health_edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border-color: #A50101;
+    background: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+}
+
+#health_edit > img {
+    width: 25px;
+    height: 25px;
+    align-content: center;
+}
+
+.health_record {
+    width: fit-content;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.10);
+}
+
+.hrec_header {
+    border-radius: 8px 8px 0px 0px;
+    background: rgba(252, 189, 0, 0.80);
+    display: flex;
+    width: 230px;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.hrec_header > h2 {
+    color: #1A1717;
+    text-align: center;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/*edit modal*/
+html.modal-active, body.modal-active {
+    overflow: hidden;
+  }
+  
+#modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 1;
+}
+
+#modal-container .modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    vertical-align: middle;
+}
+
+  #modal-container .modal-background .modal {
+    background: white;
+    color: #1A1717;
+    padding: 50px;
+    display: inline-block;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-weight: 300;
+    position: relative;
+}
+
+.input-field{
+    margin-top: 30px;
+    font-family: Poppins;
+}
+
+.input-field > input, .input-field > select{
+    border-radius: 4px;
+    background: rgba(231, 184, 184, 0.233);
+    color: #1A1717;
+    height: 40px;
+    display: inline-block;
+    padding: 0px 0px 0px 15px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: auto;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.input-field > span {
+    position:absolute;
+    align-items: center;
+    top:13px;   
+    right: 30px;
+}
+
+input::placeholder {
+    color: #131111;
+    font-size: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.3;
+}
+/*PROFILE HEALTH CSS END*/
+
+/*############### PROFILE EDIT CSS -START- ###################*/
+form {
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field > label{
+    color: var(--9-f-9-fb-9, #88879C);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    display: flex;
+    align-items: left;
+}
+
+.fields .input-field{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.fields .input-field input{
+    border-radius: 4px;
+    background-color: #d8d8df47;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: var(--9-f-9-fb-9, #88879c3e);
+}
+
+.fields .input-field input:focus{
+    border-color: var(--9-f-9-fb-9, #88879ceb);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.editForm, .profile_header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#saveBtn {
+    padding: 10px 15px;
+    width: 100px;
+    margin: 2px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 15px;
+    outline: 0;
+    border-width: 0;
+    background-image: radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+}
+
+#cancelBtn {
+    padding: 10px 15px;
+    width: 100px;
+    margin: 2px;
+    color: #A50101;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    position: relative;
+    border-radius: 15px;
+    outline: 0;
+    border-width: 0;
+}
+
+#cancelBtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px; 
+    padding: 4px; 
+    background:radial-gradient(98.80% 98.80% at 100.00% 12.50%, #FC001C 0%, #A50101 100%);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;         
+}
+
+
+ 
+
+/*############### PROFILE EDIT CSS -END- ###################*/

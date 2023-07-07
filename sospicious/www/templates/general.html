@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <title>SOSpicious!</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name = "description" content="Mobile application for tracking and seeking emeregncy responses">
+    <meta name="keywords" content="SOS, Help, Tracking">
+
+    
+    <link rel="stylesheet" href="/sospicious\www\css\general.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body >
+    <!--This container is responsible for the SOS logo and the 'Your Current Location' part-->
+    <div class="general_header">
+        <div>
+            <img src="\sospicious\www\img\sos-logo1.png" alt="SOS logo" class="g_SOS_logo" >
+        </div>
+        <div class="general_header_loc">
+            <a href="#"><img src="\sospicious\res\screen\android\LocationIcon.png" class="general_header_loc_img"/></a>
+            <div class="general_header_loc_label" id="curr_loc">Your current location</div>
+        </div>
+    </div>
+
+    <!--Proceed with caution when putting stuff in these containers,
+        they can be very unpredictable and would pretty much cause weird bugs-->
+    <div class="main_container">
+        <div class="content_container">
+        </div>
+    </div>
+
+
+
+
+
+<!--Bottom navbar-->
+<footer>
+    <nav class="nav_bar">
+        <ul class ="nvb_items" style="left: 0; position: relative;">
+            <li>
+                <a href="general.html">
+                    <!--ACTIVE puts the upper red border on navbar items-->
+                    <!--tagline_active puts the red font color on text-->
+                    <div class="items ACTIVE">
+                        <img src="\sospicious\res\screen\android\HomeACTIVE.png" class="item_img">
+                        <p class="tagline_active">Home</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="commute.html">
+                    <div class="items">
+                        <img src="\sospicious\res\screen\android\CommuteIcon.png" class="item_img">
+                        <p class="tagline">Commute</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="contacts.html">
+                    <div class="items">
+                        <img src="\sospicious\res\screen\android\ContactsIcon.png" class="item_img">
+                        <p class="tagline">Contacts</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <div class="items">
+                        <img src="\sospicious\res\screen\android\ProfileIcon.png    " class="item_img">
+                        <p class="tagline">Profile</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+</body>

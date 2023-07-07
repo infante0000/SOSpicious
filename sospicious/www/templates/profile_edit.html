@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://cdnjs.cloudflare.com; object-src 'self'; script-src-elem 'self' 'unsafe-eval' 'unsafe-inline' 
+        https://maps.googleapis.com *; media-src *; img-src 'self' data: content:; connect-src 'self';">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="../css/profile.css">
+        <title>SOSpicious</title>
+    </head>
+    <body>        
+        <div class="app">
+            <div id="profile_edit">
+
+                <form action="#" method="post" enctype="multipart/form-data" id="edit_Form">
+                    <div class="edit_header">
+                        <div class="profile-pic-div">
+                            <img src="" alt="user-profile-pic" id="profile_pic">
+                            <input type="file" id="edit_profilepic" name="edit_profilepic" accept=".jpg, .jpeg, .png">
+                            <label for="edit_profilepic" id="profile_uploadPic">Choose a<br>Photo</label>
+                        </div>
+                        <h1 id="profile_username"></h1>
+                    </div>
+
+                    <div class="editForm">
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="edit_fname">First Name</label>
+                                <input type="text" id="edit_fname" name="edit_fname" value="" placeholder="First Name" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="edit_lname">Last Name</label>
+                                <input type="text" id="edit_lname" name="edit_lname" value="" placeholder="Last Name" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="edit_dob">Date of Birth</label>
+                                <input type="date" id="edit_dob" name="edit_dob" value="" placeholder="Enter birth date" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="edit_email">Email</label>
+                                <input type="email" id="edit_email" name="edit_email" placeholder="Enter your email" value="" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="edit_mobile">Mobile Number</label>
+                                <input type="tel" id="edit_mobile" name="edit_mobile" placeholder="Enter mobile number" value="" required>
+                            </div>
+                        </div>
+                        <div class="editBtns">
+                            <button name="update_profile" type="submit" id="saveBtn">SAVE</button>
+                            <button id="cancelBtn">CANCEL</button>
+                        </div>
+                    </div>   
+                </form>
+            </div>
+            
+        </div>
+        <script src="cordova.js"></script>
+        <script src="../js/ajaxdump.js"></script>
+        <script src="../js/ajaxdump copy.js"></script>
+        <script src="../js/profile.js"></script>
+        
+    </body>
+</html>
