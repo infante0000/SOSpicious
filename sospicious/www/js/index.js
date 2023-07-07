@@ -12,6 +12,8 @@ showPassword.addEventListener("click", function(){
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
 });
+
+
 /******Change to LOGIN SECTION/REGISTER SECTION********** */
 // var login = document.getElementById("LOGIN");
 // var register = document.getElementById("REGISTER");

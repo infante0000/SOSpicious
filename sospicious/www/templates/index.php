@@ -3,8 +3,6 @@
     include("../php/connect.php");
     include("../php/function.php");
 
-    $user_data = check_login($conn);
-
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //something was posted
         $username = $_POST["username"];
@@ -23,19 +21,21 @@
                         
                         $_SESSION['user_id'] = $user_data['user_id'];
                         echo "Login Success";
-                        die;
+                        sleep(2);
                         // header("Location: ../templates/index.php");
                         // die;
                     }
                 }
             }
             echo "Wrong username or password!";
+            // die;
             // header("Location: ../templates/index.php");
             // die;
        }else{
         echo "Wrong username or password!";
        }
     }
+     $user_data = check_login($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,12 +61,12 @@
                <form method="post" novalidate>
                      <div class="login_input">
                         <label for="username">Username</label>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required maxlength="20">
                         <div class="icon"><i class="fas fa-user"></i></div>
                      </div>
                      <div class="login_input">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" required> 
+                        <input type="password" name="password" id="password" placeholder="Password" required maxlength="15"> 
                         <div class="icon"><i class="fas fa-lock"></i></div>
                         <i class="fas fa-eye-slash loginShowpass" id="showPassword"></i>
                      </div>
