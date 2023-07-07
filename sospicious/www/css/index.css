@@ -230,6 +230,15 @@ body{
     display: block;
     display: none;
 } */
+#HOME{
+    /* display: none;  */
+    display: grid;
+}
+
+#CANCEL{
+    /* display: grid; */
+    display: none;
+}
 
 @media (min-width: 500px){
     body{

@@ -1,3 +1,4 @@
+
 /******LOADING SPLASHCREEN********** */
 var preloader = document.getElementById("loading");
       function myFunction(){
@@ -12,9 +13,11 @@ showPassword.addEventListener("click", function(){
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
 });
+
+
 /******Change to LOGIN SECTION/REGISTER SECTION********** */
-// var login = document.getElementById("LOGIN");
-// var register = document.getElementById("REGISTER");
+// var login = document.getElementById("HOME");
+// var register = document.getElementById("CANCEL");
 
 // function changetoRegister(){
 //     login.style.display = "none";
@@ -94,4 +97,16 @@ function runPHPCode() {
 
   // Send the request
   xhr.send();
+}
+
+/******Change to LOGIN SECTION/REGISTER SECTION********** */
+
+var home = document.getq("HOME");
+var cancel = document.getElementById("CANCEL");
+
+
+function changetoCancel(){
+    cancel.style.display = "grid";
+    home.style.display = "none";
+    // startTimer();
 }

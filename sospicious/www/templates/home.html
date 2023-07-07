@@ -22,33 +22,68 @@
 </head>
 <body onload="myFunction()">
     <div class="home_container">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(204, 42, 52, 0.00) 0%, #CC2A34 100%), #E94A54;
+
+        }
+    </style>
+</head>
+<body onload="myFunction()">
+    <div class="home_container" id="HOME">
         <div class="home_user-loc">
             <div class="icon"><i class="fas fa-location-dot" id="userLocation"></i></div>
             <label class="home_location" for="userLocation">Your Current Location</label>
         </div>
         <div class="home_btn-container">
-            <button class="home_sos-btn" onclick="runPHPCode()">SOS</button>
+            <button class="home_sos-btn" onclick="showCancelModal(); startTimer();">SOS</button>
         </div>
-        <p class="home_press-label">Press the <span>button</span> to send alert to your emergency contacts</>
+        <p class="home_press-label">Press the <span>button</span> to send alert to your emergency contacts</p>
     </div>
-    <!-- <div class="cancel_container">
-        <h1>SENDING <br>EMERGENCY <span>ALERT!</span></h1>
-        <div id="cancel_timer"></div>
-        <div class="cancel_pin">
-            <form class="cancel_pincode-form">
-                <input class="cancel_pincode" type="password" maxlength=1 autofocus/>
-                <input class="cancel_pincode" type="password" maxlength=1 />
-                <input class="cancel_pincode" type="password" maxlength=1 />
-                <input class="cancel_pincode" type="password" maxlength=1 />
-            </form>
+
+    <div class="cancel_container modal" id="cancelModal">
+        <div class="modal-content">
+            <h1>SENDING <br>EMERGENCY <span>ALERT!</span></h1>
+            <div id="cancel_timer"></div>
+            <div class="cancel_pin">
+                <form class="cancel_pincode-form">
+                    <input class="cancel_pincode" type="password" maxlength="1" autofocus/>
+                    <input class="cancel_pincode" type="password" maxlength="1" />
+                    <input class="cancel_pincode" type="password" maxlength="1" />
+                    <input class="cancel_pincode" type="password" maxlength="1" />
+                </form>
+            </div>
+            <p class="cancel_label">Enter your <span>4-digit pin</span> to cancel sending SOS Alert to your emergency contacts.</p>
+            <p class="cancel_sent">Emergency Alert was sent!</p>
+            <p class="cancel_wrong-pin">Wrong Password</p>
         </div>
-        <p class="cancel_label">Enter your <span>4-digit pin</span> to cancel sending SOS Alert to your emergency contacts.</p>
-        <p class="cancel_sent">Emergency Alert was sent!</p>
-        <p class="cancel_wrong-pin">Wrong Password</p>
-    </div> -->
+    </div>
     
     <script src="../js/timer.js"></script>
     <script src="cordova.js"></script>
     <script src="../js/index.js"></script>
+    <script>
+        function showCancelModal() {
+            var modal = document.getElementById("cancelModal");
+            modal.style.display = "block";
+        }
+    </script>
 </body>
 </html>
