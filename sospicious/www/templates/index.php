@@ -35,7 +35,7 @@
         echo "Wrong username or password!";
        }
     }
-     $user_data = check_login($conn);
+   //   $user_data = check_login($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,29 +92,3 @@
 
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="https://kit.fontawesome.com/f99a56d007.js" crossorigin="anonymous"></script>
-    <title>SOSpicious</title>
-</head>
-<body onload="myFunction()">
-     <div id="loading" class="intro">
-        <img src="../img/sos-logo.gif" class="logo">
-     </div>
-     <header class="login_header">
-        <img src="../img/sos-logo1.png" alt="logo2" class="logo-login">
-     </header>
-     <img src="../img/Fill 1 Copy 2.png" class="background-logo3">
-     <div class="form-box">
-         <a href="../php/login.php" class="logout">Logout</a>
-         <a href="../php/signup.php" class="signup">Signup</a>
-      </div>
-   </div>
-    <script src="cordova.js"></script>
-    <script src="../js/index.js"></script>
-</body>
-</html> -->
