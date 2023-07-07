@@ -7,11 +7,23 @@
     <meta name = "description" content="Mobile application for tracking and seeking emeregncy responses">
     <meta name="keywords" content="SOS, Help, Tracking">
     
+    
     <link rel="stylesheet" href="/sospicious\www\css\general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <script src="/sospicious\www\js\general_contact.js"></script>
+    <!--Script for EmailJS-->
+    <script src="/sospicious\www\js\sendEmail.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("NtN86x5SsHWSJFp-G");
+    })();
+    </script>
 </head>
 
 <body >
@@ -236,6 +248,9 @@
                    
             </div>
         </div>
+
+        <!--IMPORTANT: TESTING BUTTON; CAN BE USED FOR THE SOS BUTTON-->
+        <button class="confirm_btn" onclick="sendMail()"> Test Email Capabilities</button>
     </div>
 
 
