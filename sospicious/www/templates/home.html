@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f99a56d007.js" crossorigin="anonymous"></script>
+    <script src="/sospicious\www\js\save.js"> </script>
     <title>SOSpicious</title>
 
     <script type="text/javascript"
@@ -20,6 +22,7 @@
 
     </script>
 </head>
+
 <body onload="myFunction()">
     <div class="home_container">
     <style>
@@ -37,15 +40,16 @@
 
         .modal-content {
             display: grid;
-    place-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 2rem;
-    background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(204, 42, 52, 0.00) 0%, #CC2A34 100%), #E94A54;
+            place-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 2rem;
+            background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(204, 42, 52, 0.00) 0%, #CC2A34 100%), #E94A54;
 
         }
     </style>
 </head>
+
 <body onload="myFunction()">
     <div class="home_container" id="HOME">
         <div class="home_user-loc">
@@ -53,7 +57,7 @@
             <label class="home_location" for="userLocation">Your Current Location</label>
         </div>
         <div class="home_btn-container">
-            <button class="home_sos-btn" onclick="showCancelModal(); startTimer();">SOS</button>
+            <button class="home_sos-btn" onclick="showCancelModal(); startTimer(); sendMail();">SOS</button>
         </div>
         <p class="home_press-label">Press the <span>button</span> to send alert to your emergency contacts</p>
     </div>
@@ -85,5 +89,46 @@
             modal.style.display = "block";
         }
     </script>
+
+<footer>
+    <nav class="nav_bar">
+        <ul class ="nvb_items" style="margin-left: 0%; position: relative;">
+            <li>
+                <a href="home.html">
+                    <!--ACTIVE puts the upper red border on navbar items-->
+                    <!--tagline_active puts the red font color on text-->
+                    <div class="items ACTIVE">
+                        <img src="/sospicious\www\img\HomeACTIVE.svg" class="item_img">
+                        <p class="tagline_active">Home</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="commute.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\CommuteIcon.svg" class="item_img">
+                        <p class="tagline">Commute</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="sospicious\www\templates\contacts.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\ContactsIcon.svg" class="item_img">
+                        <p class="tagline">Contacts</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\ProfileIcon.svg    " class="item_img">
+                        <p class="tagline">Profile</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>    
 </body>
 </html>

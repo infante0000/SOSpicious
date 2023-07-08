@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="../js/general_contact.js"></script>
+    <script src="/sospicious\www\js\general_contact.js"></script>
+    <script src="/sospicious\www\js\save.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -262,7 +263,7 @@
                     </div>
 
                     <div class="add_content_button">
-                        <button type="button" class="confirm_btn">ADD NEW</button>
+                        <button type="button" class="confirm_btn" onclick="email_save()">ADD NEW</button>
                         <button type="button" class="cancel_btn" onclick="outwin(addcontact1.id)">CANCEL</button>
                         
                     </div>
@@ -280,46 +281,45 @@
 
 
 <!--Bottom navbar; please avoid messing with the spacing unless the navbar itself is causing crashes-->
-    <footer>
-        <nav class="nav_bar">
-            <ul class ="nvb_items" style="left: 0; position: relative;">
-                <li>
-                    <a href="general.html">
-                        <!--This div creates a partition between the icon and text, allowing it to have an icon + tagline-->
-                        <div class="items">
-                            <img src="../img/HomeIcon.svg" class="item_img">
-                            <p class="tagline">Home</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="commute.html">
-                        <div class="items">
-                            <img src="../img/CommuteIcon.svg" class="item_img">
-                            <p class="tagline">Commute</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="contacts.html">
-                        <!--The ACTIVE class can be used on other footers so long as the page is currently in use-->
-                        <!--The tagline_active is for the text, while the ACTIVE is for the red top border-->
-                        <div class="items ACTIVE">
-                            <img src="../img/ContactsACTIVE.svg" class="item_img">
-                            <p class="tagline_active">Contacts</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="profile.html">
-                        <div class="items">
-                            <img src="../img/ProfileIcon.svg" class="item_img">
-                            <p class="tagline">Profile</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </footer>
+<footer>
+    <nav class="nav_bar">
+        <ul class ="nvb_items" style="margin-left: 0%; position: relative;">
+            <li>
+                <a href="home.html">
+                    <!--ACTIVE puts the upper red border on navbar items-->
+                    <!--tagline_active puts the red font color on text-->
+                    <div class="items">
+                        <img src="/sospicious\www\img\HomeIcon.svg" class="item_img">
+                        <p class="tagline">Home</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="commute.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\CommuteIcon.svg" class="item_img">
+                        <p class="tagline">Commute</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="sospicious\www\templates\contacts.html">
+                    <div class="items ACTIVE">
+                        <img src="/sospicious\www\img\ContactsACTIVE.svg" class="item_img">
+                        <p class="tagline_active">Contacts</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <div class="items ACTIVE">
+                        <img src="/sospicious\www\img\ProfileIcon.svg" class="item_img">
+                        <p class="tagline">Profile</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
 </body>
 

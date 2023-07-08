@@ -3,7 +3,8 @@ function sendMail() {
       /*Takes the values of fname and email in a form */
       /*Basically: variable: get the value of the element whose ID is ("contact_name") */
       name: document.getElementById("contact_name1").value,
-      email: document.getElementById("e_email_add").value
+      /*This is where save.js should give the variable contents*/
+      email: localStorage.email_add
     };
     
     /*Actually, it's my stuff from EmailJS, use it as you please for testing */

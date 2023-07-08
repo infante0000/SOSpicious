@@ -605,4 +605,86 @@ input:focus::placeholder {
 
 /*############### PROFILE EDIT CSS -END- ###################*/
 
+/*Footer*/
+/*Footer*/
+footer{
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+  }
+  
+  .tagline{
+  color: #C2C2C2;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
+  }
+  
+  .tagline_active{
+    color: #A50113;
+  text-align: center;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25.55px;
+  letter-spacing: -0.307px;
+  }
+  .nav_bar{
+    background: white;
+    height: 12%;
+    width: 100vw;
+    overflow: hidden;
+    bottom: 0;
+    position: fixed;
+    padding: 0px 8px 8px 8px;
+  }
 
+  .items{
+    display:flex;
+    align-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20%;
+    color: #F2F3F5;
+    outline: #000;
+  }
+
+  .item_img {
+    height: 30px;
+    width: 30px;
+    
+  }
+
+  .nvb_items{ 
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-left: -10%;
+  }
+
+  .nvb_items > *{
+    flex: 0 0 auto;
+    font-weight: bold;
+  }
+
+  .ACTIVE{
+    color: red;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top: 5px;
+    border-style: solid;
+    border-top-color: #A50113;
+    margin-top: -20px;
+  }
+  a{
+    text-decoration: none;
+  }
