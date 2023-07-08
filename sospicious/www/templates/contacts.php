@@ -91,10 +91,6 @@
                     
                         echo '</div>';
                     }
-
-                    $emailName->emailName = $conFName;
-
-                    $jsonString = json_encode($emailName); 
                 ?>
 
             
@@ -278,7 +274,7 @@
         </div>
 
         <!--IMPORTANT: TESTING BUTTON; CAN BE USED FOR THE SOS BUTTON-->
-        <button class="confirm_btn" onclick="sendMail()"> Test Email Capabilities</button>
+        <!-- <button class="confirm_btn" onclick="sendMail()"> Test Email Capabilities</button> -->
     </div>
 
 

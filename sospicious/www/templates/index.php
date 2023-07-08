@@ -3,6 +3,8 @@
     require_once("../php/connect.php");
     require_once("../php/function.php");
 
+   //  $user_data = check_login($conn);
+
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //something was posted
         $username = $_POST["username"];
@@ -11,15 +13,16 @@
         if (!empty($username) && !empty($password)) {
             //read from database
             $query = "SELECT * FROM user_infor WHERE username = '$username' LIMIT 1";
-
+           
             $result = mysqli_query($conn, $query);
 
             if($result){
                 if($result && mysqli_num_rows($result) > 0){
                     $user_data = mysqli_fetch_assoc($result);
                     if($user_data['password'] === $password){
-                        
+                        // $user_id = $user_data['user_id'];
                         $_SESSION['user_id'] = $user_data['user_id'];
+                        
                         echo "Login Success";
                         sleep(2);
                         header("Location: ../templates/home.html");
@@ -35,7 +38,7 @@
         echo "Wrong username or password!";
        }
     }
-   //   $user_data = check_login($conn);
+   //  
 ?>
 <!DOCTYPE html>
 <html lang="en">

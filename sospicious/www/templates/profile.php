@@ -4,6 +4,7 @@
     session_start();
     serialize($conn);
     $user_id = 1;
+    
 
 ?>
 <html>
@@ -82,6 +83,16 @@
                         </div>
                         <img src="../img/chevron-right.svg" alt="icon-more">
                     </div>
+                    <!--Logout-->
+
+                    <div class="profile_navs_item prof_logout" onclick="openLogoutModal()" style="margin-bottom: 20px;">
+                            <img src="../img/icon-logout.svg" alt="icon-logout">
+                            <div class="profile_navs_title">
+                                <h3>Logout</h3>
+                                <span>Logout of your account</span>
+                            </div>
+                            <img src="../img/chevron-right.svg" alt="icon-more">
+                        </div>       
                     <!--About-->
                     <div class="profile_navs_item">
                         <img src="../img/icon-info.svg" alt="icon-info">
@@ -91,22 +102,14 @@
                         </div>
                         <img src="../img/chevron-right.svg" alt="icon-more">
                     </div>
-                    <!--Logout-->
-                        <div class="profile_navs_item prof_logout" onclick="openLogoutModal()">
-                            <img src="../img/icon-logout.svg" alt="icon-logout">
-                            <div class="profile_navs_title">
-                                <h3>Logout</h3>
-                                <span>Logout of your account</span>
-                            </div>
-                            <img src="../img/chevron-right.svg" alt="icon-more">
-                        </div>                
+                             
                 </div>
             </div>
                 <div class="logout_popup" id="logout_popup">
                     <img src="../img/profile_warning.png">
                     <h1>Log Out</h1>
                     <p>Are you sure you want to log out?</p>
-                    <button class="logoutBtn confirmLogout" type="button" onclick="closeLogoutModal()">Confirm</button>
+                    <button class="logoutBtn confirmLogout" type="button" onclick="logout()">Confirm</button>
                     <button class="logoutBtn cancelLogout" type="button" onclick="closeLogoutModal()">Cancel</button>
                 </div>
             
