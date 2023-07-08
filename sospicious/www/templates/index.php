@@ -22,8 +22,8 @@
                         $_SESSION['user_id'] = $user_data['user_id'];
                         echo "Login Success";
                         sleep(2);
-                        // header("Location: ../templates/index.php");
-                        // die;
+                        header("Location: ../templates/home.html");
+                        die;
                     }
                 }
             }

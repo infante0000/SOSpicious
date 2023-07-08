@@ -61,8 +61,10 @@ function onTimesUp() {
     pinContainer.style.display = "none";
     pinLabel.style.display = "none";
     pinSent.style.display = "block";
-    Container.style.display = "none";
-    home.style.display = "grid";
+    // sendMail("testname",["rhonakaye05@gmail.com"]);
+    // location.reload();
+    // Container.style.display = "none";
+    // home.style.display = "grid";
 }
 
 function startTimer() {
@@ -130,39 +132,157 @@ function setCircleDasharray() {
 
 
 //var pinContainer = document.getElementsByClassName("pin-code")[0];
+// var pinContainer = document.querySelector(".cancel_pincode-form");
+// console.log('There is ' + pinContainer.length + ' Pin Container on the page.');
+
+// pinContainer.addEventListener('keyup', function (event) {
+//     var target = event.srcElement;
+    
+//     var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+//     var myLength = target.value.length;
+
+//     if (myLength >= maxLength) {
+//         var next = target;
+//         while (next = next.nextElementSibling) {
+//             if (next == null) break;
+//             if (next.tagName.toLowerCase() == "input") {
+//                 next.focus();
+//                 break;
+//             }
+//         }
+//     }
+
+//     if (myLength === 0) {
+//         var next = target;
+//         while (next = next.previousElementSibling) {
+//             if (next == null) break;
+//             if (next.tagName.toLowerCase() == "input") {
+//                 next.focus();
+//                 break;
+//             }
+//         }
+//     }
+// }, false);
+
+// pinContainer.addEventListener('keydown', function (event) {
+//     var target = event.srcElement;
+//     target.value = "";
+// }, false);
+
 var pinContainer = document.querySelector(".cancel_pincode-form");
-console.log('There is ' + pinContainer.length + ' Pin Container on the page.');
+var homeButton = document.getElementById("homeButton");
 
 pinContainer.addEventListener('keyup', function (event) {
-    var target = event.srcElement;
-    
-    var maxLength = parseInt(target.attributes["maxlength"].value, 10);
-    var myLength = target.value.length;
+  var target = event.srcElement;
+  
+  var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+  var myLength = target.value.length;
 
-    if (myLength >= maxLength) {
-        var next = target;
-        while (next = next.nextElementSibling) {
-            if (next == null) break;
-            if (next.tagName.toLowerCase() == "input") {
-                next.focus();
-                break;
-            }
-        }
+  if (myLength >= maxLength) {
+    var next = target;
+    while (next = next.nextElementSibling) {
+      if (next == null) break;
+      if (next.tagName.toLowerCase() == "input") {
+        next.focus();
+        break;
+      }
     }
+  }
 
-    if (myLength === 0) {
-        var next = target;
-        while (next = next.previousElementSibling) {
-            if (next == null) break;
-            if (next.tagName.toLowerCase() == "input") {
-                next.focus();
-                break;
-            }
-        }
+  if (myLength === 0) {
+    var next = target;
+    while (next = next.previousElementSibling) {
+      if (next == null) break;
+      if (next.tagName.toLowerCase() == "input") {
+        next.focus();
+        break;
+      }
     }
+  }
+
+  // Check if the entered code matches the desired code
+  var enteredCode = Array.from(pinContainer.getElementsByTagName("input"))
+    .map(input => input.value)
+    .join("");
+
+  var desiredCode = "1234"; // Replace with your desired 4-digit code
+
+  if (enteredCode === desiredCode) {
+    homeButton.style.display = "block";
+  } else {
+    homeButton.style.display = "none";
+  }
 }, false);
 
 pinContainer.addEventListener('keydown', function (event) {
-    var target = event.srcElement;
-    target.value = "";
+  var target = event.srcElement;
+  target.value = "";
 }, false);
+
+
+var homeButton = document.getElementById("homeButton");
+
+homeButton.addEventListener("click", function() {
+  location.reload();
+});
+
+// function showButton() {
+//     var button = document.getElementById("homeButton");
+//     button.style.display = "block";
+// }
+
+// function hideButton() {
+//     var button = document.getElementById("homeButton");
+//     button.style.display = "none";
+// }
+
+
+
+
+// function sendMail(username,emailAddresses) {
+//   // runPHPCode();
+//   // Iterate through the email addresses
+//   emailAddresses.forEach(function (email) {
+//     // Prepare the email parameters
+//     var params = {
+//       from_name: username,
+//       to_email: email,
+//       link: 'tstlink'
+//     };
+
+//     // Send the email using EmailJS
+//     emailjs.send('service_y8tbrns', 'template_sid438m', params)
+//       .then(function(response) {
+//         console.log('Email sent successfully to: ' + email);
+//       })
+//       .catch(function(error) {
+//         console.error('Error sending email to: ' + email, error);
+//       });
+//   });
+// }
+
+
+// function runPHPCode() {
+//   var xhr = new XMLHttpRequest();
+
+//   // Prepare the request
+//   xhr.open('POST', '../php/sendMail.php', true);
+
+//   // Set the response type
+//   xhr.responseType = 'text';
+
+//   // Handle the response
+//   xhr.onload = function() {
+//     if (xhr.status === 200) {
+//       var response = xhr.responseText;
+//       // Handle the response data here
+//       console.log(response);
+//     } else {
+//       // Handle any errors
+//       console.error('Error: ' + xhr.status);
+//     }
+//   };
+
+//   // Send the request
+//   xhr.send();
+// }
