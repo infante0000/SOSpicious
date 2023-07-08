@@ -25,7 +25,6 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/profile.css">
 
         <title>SOSpicious</title>
@@ -113,8 +112,6 @@
             
         </div>
         
-    
-        <!--#include virtual="footer.html" -->
         <script src="cordova.js"></script>
         <script src="../js/profile.js"></script>
     </body>
@@ -123,13 +120,13 @@
 <!--Footer-->
     <footer>
     <nav class="nav_bar">
-        <ul class ="nvb_items" style="margin-left: 0%; position: relative;">
+        <ul class ="nvb_items" style="position: relative;">
             <li>
                 <a href="home.html">
                     <!--ACTIVE puts the upper red border on navbar items-->
                     <!--tagline_active puts the red font color on text-->
                     <div class="items">
-                        <img src="/sospicious\www\img\HomeACTIVE.svg" class="item_img">
+                        <img src="../img/HomeIcon.svg" class="item_img">
                         <p class="tagline">Home</p>
                     </div>
                 </a>
@@ -137,23 +134,23 @@
             <li>
                 <a href="commute.html">
                     <div class="items">
-                        <img src="/sospicious\www\img\CommuteIcon.svg" class="item_img">
+                        <img src="../img/CommuteIcon.svg" class="item_img">
                         <p class="tagline">Commute</p>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="sospicious\www\templates\contacts.html">
+                <a href="contacts.php">
                     <div class="items">
-                        <img src="/sospicious\www\img\ContactsIcon.svg" class="item_img">
+                        <img src="../img/ContactsIcon.svg" class="item_img">
                         <p class="tagline">Contacts</p>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="profile.html">
+                <a href="profile.php">
                     <div class="items ACTIVE">
-                        <img src="/sospicious\www\img\ProfileIcon.svg    " class="item_img">
+                        <img src="../img/ProfileActive.svg    " class="item_img">
                         <p class="tagline_active">Profile</p>
                     </div>
                 </a>

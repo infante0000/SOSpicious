@@ -434,7 +434,8 @@ body{
   }
 
   /*Footer*/
-  footer{
+/*Footer*/
+footer{
     position: fixed;
     margin: 0 auto;
     left: 0;
@@ -449,6 +450,7 @@ body{
   font-weight: 500;
   line-height: 25.55px;
   letter-spacing: -0.307px;
+  margin-top: 10px;
   }
   
   .tagline_active{
@@ -460,6 +462,7 @@ body{
   font-weight: 500;
   line-height: 25.55px;
   letter-spacing: -0.307px;
+  margin-top: 10px;
   }
   .nav_bar{
     background: white;
@@ -477,7 +480,7 @@ body{
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-top: 20%;
+    padding:10px;
     color: #F2F3F5;
     outline: #000;
   }
@@ -494,7 +497,8 @@ body{
     flex-direction: row;
     align-items: baseline;
     justify-content: space-around;
-    margin-left: -10%;
+    margin-left: -12%;
+    margin-top: 6px;
   }
 
   .nvb_items > *{
