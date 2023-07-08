@@ -118,4 +118,47 @@
         <script src="cordova.js"></script>
         <script src="../js/profile.js"></script>
     </body>
+
+
+<!--Footer-->
+    <footer>
+    <nav class="nav_bar">
+        <ul class ="nvb_items" style="margin-left: 0%; position: relative;">
+            <li>
+                <a href="home.html">
+                    <!--ACTIVE puts the upper red border on navbar items-->
+                    <!--tagline_active puts the red font color on text-->
+                    <div class="items">
+                        <img src="/sospicious\www\img\HomeACTIVE.svg" class="item_img">
+                        <p class="tagline">Home</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="commute.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\CommuteIcon.svg" class="item_img">
+                        <p class="tagline">Commute</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="sospicious\www\templates\contacts.html">
+                    <div class="items">
+                        <img src="/sospicious\www\img\ContactsIcon.svg" class="item_img">
+                        <p class="tagline">Contacts</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <div class="items ACTIVE">
+                        <img src="/sospicious\www\img\ProfileIcon.svg    " class="item_img">
+                        <p class="tagline_active">Profile</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>    
 </html>
