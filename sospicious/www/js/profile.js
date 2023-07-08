@@ -63,6 +63,11 @@ function closeLogoutModal() {
     toggleClass("logout_popup", "open-logoutModal", "remove");
     toggleClass("profile_contents", "bg-blurred", "remove");
 }
+function logout() {
+    toggleClass("logout_popup", "open-logoutModal", "remove");
+    toggleClass("profile_contents", "bg-blurred", "remove");
+    window.location.href = "../templates/index.php";
+}
   
 /**PROFILE HEALTH */
 function editHRecord(){
