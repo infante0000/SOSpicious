@@ -1,5 +1,15 @@
 function sendMail() {
-    var params = {
+  $.ajax({
+    url: 'contacts.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function(contacts) {
+      var jsonString = <?php echo $jsonString; ?>;
+var jsObject = JSON.parse(jsonString);
+    }
+  });
+  
+  var params = {
       /*Takes the values of fname and email in a form */
       /*Basically: variable: get the value of the element whose ID is ("contact_name") */
       name: document.getElementById("contact_name1").value,

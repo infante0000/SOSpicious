@@ -52,12 +52,13 @@
 
 <body onload="myFunction()">
     <div class="home_container" id="HOME">
+        <audio loop src="../img/emergency.mp3"></audio>
         <div class="home_user-loc">
             <div class="icon"><i class="fas fa-location-dot" id="userLocation"></i></div>
             <label class="home_location" for="userLocation">Your Current Location</label>
         </div>
         <div class="home_btn-container">
-            <button class="home_sos-btn" onclick="showCancelModal(); startTimer(); sendMail();">SOS</button>
+            <button class="home_sos-btn" onclick="showCancelModal(); startTimer(); play();">SOS</button>
         </div>
         <p class="home_press-label">Press the <span>button</span> to send alert to your emergency contacts</p>
     </div>
@@ -72,10 +73,17 @@
                     <input class="cancel_pincode" type="password" maxlength="1" />
                     <input class="cancel_pincode" type="password" maxlength="1" />
                     <input class="cancel_pincode" type="password" maxlength="1" />
+                    <!-- <button class="cancel_pincode-btn" type="submit">Cancel</button> -->
                 </form>
             </div>
+            <button id="homeButton" style="display: none;padding: 10px;
+                                    background-color: orange;
+                                    color: white;
+                                    border-radius: 10px;
+                                    font-weight: bold;">
+                                    Go to Home</button>
             <p class="cancel_label">Enter your <span>4-digit pin</span> to cancel sending SOS Alert to your emergency contacts.</p>
-            <p class="cancel_sent">Emergency Alert was sent!</p>
+            <p class="cancel_sent">Emergency Alert is playing</p>
             <p class="cancel_wrong-pin">Wrong Password</p>
         </div>
     </div>
@@ -83,6 +91,8 @@
     <script src="../js/timer.js"></script>
     <script src="cordova.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/sendEmail.js"></script>
+  
     <script>
         function showCancelModal() {
             var modal = document.getElementById("cancelModal");

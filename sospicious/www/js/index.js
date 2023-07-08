@@ -14,6 +14,23 @@ showPassword.addEventListener("click", function(){
     passwordField.setAttribute('type', type);
 });
 
+function play(){
+  const audio = document.querySelector("audio");
+      if (audio.paused) {
+      audio.volume = 0.2;
+      audio.play();
+      icon.classList.add('fa-volume-up');
+      icon.classList.remove('fa-volume-mute');
+  
+    } else {
+      audio.pause();
+      icon.classList.add('fa-volume-mute');
+      icon.classList.remove('fa-volume-up');
+    }
+    button.classList.add("fade");
+}
+
+
 
 /******Change to LOGIN SECTION/REGISTER SECTION********** */
 // var login = document.getElementById("HOME");
@@ -51,62 +68,62 @@ showPassword.addEventListener("click", function(){
 // }
 
 
-function sendMail(username,emailAddresses) {
-  // runPHPCode();
-  // Iterate through the email addresses
-  emailAddresses.forEach(function (email) {
-    // Prepare the email parameters
-    var params = {
-      from_name: username,
-      to_email: email,
-      link: 'tstlink'
-    };
+// function sendMail(username,emailAddresses) {
+//   // runPHPCode();
+//   // Iterate through the email addresses
+//   emailAddresses.forEach(function (email) {
+//     // Prepare the email parameters
+//     var params = {
+//       from_name: username,
+//       to_email: email,
+//       link: 'tstlink'
+//     };
 
-    // Send the email using EmailJS
-    emailjs.send('service_y8tbrns', 'template_sid438m', params)
-      .then(function(response) {
-        console.log('Email sent successfully to: ' + email);
-      })
-      .catch(function(error) {
-        console.error('Error sending email to: ' + email, error);
-      });
-  });
-}
+//     // Send the email using EmailJS
+//     emailjs.send('service_y8tbrns', 'template_sid438m', params)
+//       .then(function(response) {
+//         console.log('Email sent successfully to: ' + email);
+//       })
+//       .catch(function(error) {
+//         console.error('Error sending email to: ' + email, error);
+//       });
+//   });
+// }
 
 
-function runPHPCode() {
-  var xhr = new XMLHttpRequest();
+// function runPHPCode() {
+//   var xhr = new XMLHttpRequest();
 
-  // Prepare the request
-  xhr.open('POST', '../php/sendMail.php', true);
+//   // Prepare the request
+//   xhr.open('POST', '../php/sendMail.php', true);
 
-  // Set the response type
-  xhr.responseType = 'text';
+//   // Set the response type
+//   xhr.responseType = 'text';
 
-  // Handle the response
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      var response = xhr.responseText;
-      // Handle the response data here
-      console.log(response);
-    } else {
-      // Handle any errors
-      console.error('Error: ' + xhr.status);
-    }
-  };
+//   // Handle the response
+//   xhr.onload = function() {
+//     if (xhr.status === 200) {
+//       var response = xhr.responseText;
+//       // Handle the response data here
+//       console.log(response);
+//     } else {
+//       // Handle any errors
+//       console.error('Error: ' + xhr.status);
+//     }
+//   };
 
-  // Send the request
-  xhr.send();
-}
+//   // Send the request
+//   xhr.send();
+// }
 
 /******Change to LOGIN SECTION/REGISTER SECTION********** */
 
-var home = document.getq("HOME");
-var cancel = document.getElementById("CANCEL");
+// var home = document.getq("HOME");
+// var cancel = document.getElementById("CANCEL");
 
 
-function changetoCancel(){
-    cancel.style.display = "grid";
-    home.style.display = "none";
-    // startTimer();
-}
+// function changetoCancel(){
+//     cancel.style.display = "grid";
+//     home.style.display = "none";
+//     // startTimer();
+// }

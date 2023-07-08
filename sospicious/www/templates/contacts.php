@@ -18,6 +18,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="../js/general_contact.js"></script>
     <script src="../js/save.js"> </script>
+    <script src="../js/sendEmail.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -90,6 +91,10 @@
                     
                         echo '</div>';
                     }
+
+                    $emailName->emailName = $conFName;
+
+                    $jsonString = json_encode($emailName); 
                 ?>
 
             
