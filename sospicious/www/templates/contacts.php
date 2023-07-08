@@ -73,6 +73,7 @@
                         $conFName = $row['con_fname'];
                         $conLName = $row['con_lname'];
                         $conRelation = $row['con_relation'];
+                        $conEmail = $row['con_email'];
 
                         echo '<div id="contact_card">';
                         echo '<span>';
@@ -90,7 +91,11 @@
                     
                         echo '</div>';
                     }
+
                 ?>
+                <script type="text/javascript">
+                        var email = <?php echo $conEmail; ?>;
+                </script>
 
             
         </div>

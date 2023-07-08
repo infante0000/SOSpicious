@@ -73,7 +73,7 @@
                             <img src="../img/chevron-right.svg" alt="icon-more">
                         </div>
                     </a>
-                    <!--Notifications-->
+                    <!-- Notifications -->
                     <div class="profile_navs_item">
                         <img src="../img/icon-bell.svg" alt="icon-notifs">
                         <div class="profile_navs_title">
@@ -110,15 +110,10 @@
                     <button class="logoutBtn cancelLogout" type="button" onclick="closeLogoutModal()">Cancel</button>
                 </div>
             
+                
+   
         </div>
-        
-        <script src="cordova.js"></script>
-        <script src="../js/profile.js"></script>
-    </body>
-
-
-<!--Footer-->
-    <footer>
+        <footer>
     <nav class="nav_bar">
         <ul class ="nvb_items" style="position: relative;">
             <li>
@@ -157,5 +152,15 @@
             </li>
         </ul>
     </nav>
-</footer>    
+</footer>
+        
+        <script src="cordova.js"></script>
+        <script src="../js/profile.js"></script>
+
+        
+    </body>
+
+
+<!--Footer-->
+        
 </html>

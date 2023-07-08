@@ -1,3 +1,9 @@
+<?php
+    require_once "../php/connect.php";
+    session_start();
+    $user_id = 1;
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,6 +29,12 @@
     </head>
     <body>
         <div class="app">
+                <?php
+                    $select = mysqli_query($conn, "SELECT * FROM `user_healthrec`, `user_infor` WHERE user_healthrec.user_id = user_infor.user_id;") or die('query failed');
+                    if(mysqli_num_rows($select) > 0){
+                        $fetch = mysqli_fetch_assoc($select);
+                    }
+                ?>
 
             <div id="modal-container">
                 <div class="modal-background">
@@ -33,18 +45,18 @@
                         <h1>23</h1>
                     </div>
                     <div class="input-field wrapper">
-                        <label for="weight">WEIGHT:</label>
-                        <input type="text" id="weight" name="weight" placeholder="Weight" required>
-                        <span>| kg</span>
+                        <label for="weight">WEIGHT: </label>
+                        <input type="text" id="weight" name="weight" value="<?php echo $fetch['user_weight']; ?>" placeholder="Weight" required>
+                        <span> | kg</span>
                     </div>
                     <div class="input-field wrapper">
-                        <label for="height">HEIGHT:</label>
-                        <input type="text" id="height" name="height" placeholder="Height" required>
-                        <span>| cm</span>
+                        <label for="height">HEIGHT: </label>
+                        <input type="text" id="height" name="height" value="<?php echo $fetch['user_height']; ?>" placeholder="Height" required>
+                        <span> | cm</span>
                     </div>
                     <div class="input-field wrapper">
-                        <label for="blood">Blood Type:</label>
-                        <select id="blood" name="blood" required>
+                        <label for="blood">Blood Type: </label>
+                        <select id="blood" name="blood" value="<?php echo $fetch['user_blood']; ?>" required>
                             <option disabled selected hidden>-- SELECT Blood Type --</option>
                             <option>Type A-</option>
                             <option>Type A+</option>
@@ -71,14 +83,14 @@
                     </div>
                     <div class="health_profile">
                         <div class="health_user_details">
-                            <h1 id="profile_firstname"></h1>
-                            <h1 id="profile_lastname"></h1>
-                            <h1 id="profile_age">23</h1>
+                            <h1 id="profile_firstname"><?php echo $fetch['user_fname']; ?></h1>
+                            <h1 id="profile_lastname"> &nbsp;<?php echo $fetch['user_lname']; ?></h1>
+                            <!-- <h1 id="profile_age"> 23</h1> -->
                         </div>
                         <div class="health_details">
-                            <p class="health_weight">Weight: <span id="user_weight"></span></p>
-                            <p class="health_height">Height: <span id="user_height"></span></p>
-                            <p class="health_blood">Blood Type: <span id="user_blood"></span></p>
+                            <p class="health_weight">Weight: <span id="user_weight"><?php echo $fetch['user_weight']; ?></span></p>
+                            <p class="health_height">Height: <span id="user_height"><?php echo $fetch['user_height']; ?></span></p>
+                            <p class="health_blood">Blood Type: <span id="user_blood"><?php echo $fetch['user_blood']; ?></span></p>
                         
                         </div>
                     </div>
