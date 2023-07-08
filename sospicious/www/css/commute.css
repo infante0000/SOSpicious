@@ -118,6 +118,18 @@
     background: #A50113;
 }
 
+.commute2_inline{
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+
+    
+}
+
+.commute2_input_loc{
+
+}
+
 .commute2_input{
         border: 0;
         outline: 0;
@@ -275,9 +287,11 @@ input[type="text"], textarea{
 .commute3_card{
     border-radius: 12px;
     background: #F0F4F8;
-    padding: 35px;
+    padding: 30px;
     display: grid;
     row-gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .commute3_date_status{
@@ -427,7 +441,8 @@ input[type="text"], textarea{
 }
 
 .commute3_chip__content{
-    font-size: 8px;
+    font-size: 10px;
+    font-weight: 400;
 }
 
 /* completed chip */
@@ -462,5 +477,28 @@ input[type="text"], textarea{
 
 .commute3_chip__content_green{
     font-size: 8px;
+}
+
+.message{
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+.message .success{
+    font-size: 20px;
+    color: green;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+}
+.message .danger{
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    transition: .3s;
+    animation: buttons .3s linear;
+    display: none;
 }
 
